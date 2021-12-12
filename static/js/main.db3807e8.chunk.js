@@ -1,0 +1,2 @@
+(this.webpackJsonpthe_rest_of_your_life=this.webpackJsonpthe_rest_of_your_life||[]).push([[0],{11:function(e,t,n){"use strict";n.r(t);var r=n(0),c=n.n(r),o=n(3),s=n.n(o),i=(n(8),n(9),n(1));var u=function(){return Object(i.jsx)("div",{className:"App",children:"The Rest Of Your Life App"})};s.a.render(Object(i.jsx)(c.a.StrictMode,{children:Object(i.jsx)(u,{})}),document.getElementById("root"))},8:function(e,t,n){},9:function(e,t,n){}},[[11,1,2]]]);
+//# sourceMappingURL=main.db3807e8.chunk.js.map
