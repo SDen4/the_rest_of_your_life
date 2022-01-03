@@ -1,4 +1,4 @@
-import { OPEN_FORM } from './constants';
+import { OPEN_FORM, CHOSE_COUNTRY } from './constants';
 
 export const openForm = (formFlag: boolean) => {
   return {
@@ -7,6 +7,14 @@ export const openForm = (formFlag: boolean) => {
   } as const;
 };
 
-type openFormType = ReturnType<typeof openForm>;
+export const choseCountry = (chosenCountry: string) => {
+  return {
+    type: CHOSE_COUNTRY,
+    chosenCountry,
+  } as const;
+};
 
-export type ActionsType = openFormType;
+type openFormType = ReturnType<typeof openForm>;
+type choseCountryType = ReturnType<typeof choseCountry>;
+
+export type ActionsType = openFormType | choseCountryType;

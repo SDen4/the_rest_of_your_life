@@ -1,4 +1,6 @@
-import { OPEN_FORM } from './constants';
+import { OPEN_FORM, CHOSE_COUNTRY } from './constants';
+
+import data from '../../data/data.json';
 
 import { InitialMainReducerType } from './types';
 
@@ -6,6 +8,8 @@ import { ActionsType } from './actions';
 
 const InitialState: InitialMainReducerType = {
   formFlag: false,
+  countriesList: Array.from(new Set(data.fact.map((el) => el.dims.COUNTRY))),
+  chosenCountry: '',
 };
 
 export const MainReducer = (
@@ -14,10 +18,10 @@ export const MainReducer = (
 ): typeof state => {
   switch (action.type) {
     case OPEN_FORM:
-      return {
-        ...state,
-        formFlag: action.formFlag,
-      };
+      return { ...state, formFlag: action.formFlag };
+
+    case CHOSE_COUNTRY:
+      return { ...state, chosenCountry: action.chosenCountry };
 
     default:
       return state;
