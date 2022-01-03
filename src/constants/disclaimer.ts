@@ -2,3 +2,8 @@ export const DisclaimerText = {
   rus: 'Мы живем и не задумываемся о том, сколько нам еще осталось.  Мы думаем, что так будет продолжаться если не вечно, то еще очень долго. Иногда, чтобы в полную силу осознать что-либо, необходимо посмотреть на это со стороны. Я предлагаю вам взглянуть на ваше оставшееся время. Надеюсь, это заставит вас задуматься о том, как и на что вы тратите самое дорогое, что есть у вас в жизни - ваше время.',
   eng: 'We live and do not think about how long we still have to live. We think that this will continue, if not forever, then for a very long time. Sometimes, in order to fully realize something, you need to look at it from the outside. I invite you to take a look at your time remaining. I hope this will make you think about how and on what you are spending the most precious thing in your life - your time.',
 };
+
+export const DisclaimerButtonText = {
+  rus: 'Вперед!',
+  eng: "Let's go!",
+};
