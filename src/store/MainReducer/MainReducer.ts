@@ -6,10 +6,14 @@ import { InitialMainReducerType } from './types';
 
 import { ActionsType } from './actions';
 
+const dataCountriesList = Array.from(
+  new Set(data.fact.map((el) => el.dims.COUNTRY)),
+);
+
 const InitialState: InitialMainReducerType = {
   formFlag: false,
-  countriesList: Array.from(new Set(data.fact.map((el) => el.dims.COUNTRY))),
-  chosenCountry: '',
+  countriesList: dataCountriesList,
+  chosenCountry: dataCountriesList[0],
 };
 
 export const MainReducer = (
