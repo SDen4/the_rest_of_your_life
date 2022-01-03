@@ -17,6 +17,7 @@ import {
   saveResult,
 } from '../../store/MainReducer/actions';
 import Button from '../../ui/Button';
+import Select from '../../ui/Select';
 import currentSexForSearch from '../../utils/currentSexForSearch';
 
 import styles from './Form.module.css';
@@ -65,25 +66,19 @@ const Form: React.FC<IForm> = ({ store }) => {
 
       <form className={styles.formWrapper}>
         <div className={styles.formRow}>
-          <label>{formNames.rus}</label>
-          <select onChange={choseNewCountry}>
-            {store.countriesList.map((el) => (
-              <option value={el} key={el}>
-                {el}
-              </option>
-            ))}
-          </select>
+          <Select
+            title={formNames.rus}
+            choseNewSex={choseNewCountry}
+            formSexList={store.countriesList}
+          />
         </div>
 
         <div className={styles.formRow}>
-          <label>{formSex.rus}</label>
-          <select onChange={choseNewSex}>
-            {formSexList.rus.map((el) => (
-              <option value={el} key={el}>
-                {el}
-              </option>
-            ))}
-          </select>
+          <Select
+            title={formSex.rus}
+            choseNewSex={choseNewSex}
+            formSexList={formSexList.rus}
+          />
         </div>
       </form>
 
