@@ -1,9 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { formNames, formTitle } from '../../constants/form';
+import {
+  formButton,
+  formNames,
+  formSex,
+  formSexList,
+  formTitle,
+} from '../../constants/form';
 
-import { choseCountry } from '../../store/MainReducer/actions';
+import { choseCountry, choseSex } from '../../store/MainReducer/actions';
+import Button from '../../ui/Button';
 
 import styles from './Form.module.css';
 import { IForm } from './types';
@@ -17,20 +24,42 @@ const Form: React.FC<IForm> = ({ countriesList }) => {
     }
   };
 
+  const choseNewSex = (event: any) => {
+    if (event.target.value) {
+      dispatch(choseSex(event.target.value));
+    }
+  };
+
   return (
-    <>
-      <h2>{formTitle.rus}</h2>
+    <div className={styles.formComponent}>
+      <h2 className={styles.subTitle}>{formTitle.rus}</h2>
+
       <form className={styles.formWrapper}>
-        <label>{formNames.rus}</label>
-        <select onChange={choseNewCountry}>
-          {countriesList.map((el) => (
-            <option value={el} key={el}>
-              {el}
-            </option>
-          ))}
-        </select>
+        <div className={styles.formRow}>
+          <label>{formNames.rus}</label>
+          <select onChange={choseNewCountry}>
+            {countriesList.map((el) => (
+              <option value={el} key={el}>
+                {el}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className={styles.formRow}>
+          <label>{formSex.rus}</label>
+          <select onChange={choseNewSex}>
+            {formSexList.rus.map((el) => (
+              <option value={el} key={el}>
+                {el}
+              </option>
+            ))}
+          </select>
+        </div>
       </form>
-    </>
+
+      <Button buttonText={formButton.rus} buttonOnClickHandler={() => null} />
+    </div>
   );
 };
 

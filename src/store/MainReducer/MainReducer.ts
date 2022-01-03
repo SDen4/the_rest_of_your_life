@@ -1,4 +1,5 @@
-import { OPEN_FORM, CHOSE_COUNTRY } from './constants';
+import { OPEN_FORM, CHOSE_COUNTRY, CHOSE_SEX } from './constants';
+import { formSexList } from '../../constants/form';
 
 import data from '../../data/data.json';
 
@@ -14,6 +15,7 @@ const InitialState: InitialMainReducerType = {
   formFlag: false,
   countriesList: dataCountriesList,
   chosenCountry: dataCountriesList[0],
+  chosenSex: formSexList.rus[0],
 };
 
 export const MainReducer = (
@@ -26,6 +28,9 @@ export const MainReducer = (
 
     case CHOSE_COUNTRY:
       return { ...state, chosenCountry: action.chosenCountry };
+
+    case CHOSE_SEX:
+      return { ...state, chosenSex: action.chosenSex };
 
     default:
       return state;
