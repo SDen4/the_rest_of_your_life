@@ -4,7 +4,7 @@ export const formNames = {
 };
 
 export const formTitle = {
-  rus: 'Пожалуйста, заполните поля',
+  rus: 'Пожалуйста, заполни поля',
   eng: 'Please, fill the form',
 };
 
