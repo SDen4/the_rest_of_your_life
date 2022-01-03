@@ -1,3 +1,5 @@
+import { InitialMainReducerType } from '../../store/MainReducer/types';
+
 export interface IForm {
-  countriesList: string[];
+  store: InitialMainReducerType;
 }

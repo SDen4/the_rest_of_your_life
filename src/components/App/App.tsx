@@ -16,11 +16,7 @@ function App() {
 
   return (
     <div className={styles.appWrapper}>
-      {!storeState.formFlag ? (
-        <Disclaimer />
-      ) : (
-        <Form countriesList={storeState.countriesList} />
-      )}
+      {!storeState.formFlag ? <Disclaimer /> : <Form store={storeState} />}
     </div>
   );
 }
