@@ -17,6 +17,7 @@ import {
   saveResult,
 } from '../../store/MainReducer/actions';
 import Button from '../../ui/Button';
+import currentSexForSearch from '../../utils/currentSexForSearch';
 
 import styles from './Form.module.css';
 import { IForm } from './types';
@@ -37,21 +38,7 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const calculateHandler = () => {
-    let currentSex = store.chosenSex;
-
-    if (
-      currentSex.toLocaleLowerCase() === 'male' ||
-      currentSex.toLocaleLowerCase() === 'муж'
-    ) {
-      currentSex = 'Male';
-    } else if (
-      currentSex.toLocaleLowerCase() === 'female' ||
-      currentSex.toLocaleLowerCase() === 'жен'
-    ) {
-      currentSex = 'Female';
-    } else {
-      currentSex = 'Both sexes';
-    }
+    let currentSex = currentSexForSearch(store.chosenSex);
 
     // range of relevant data by years
     const releventRange = data.fact.filter(
