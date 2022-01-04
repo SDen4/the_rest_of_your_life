@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import {
   formButton,
+  formDate,
   formNames,
   formSex,
   formSexList,
@@ -12,6 +13,7 @@ import {
 import data from '../../data/data.json';
 
 import {
+  choseBirthDate,
   choseCountry,
   choseSex,
   saveResult,
@@ -35,6 +37,12 @@ const Form: React.FC<IForm> = ({ store }) => {
   const choseNewSex = (event: any) => {
     if (event.target.value) {
       dispatch(choseSex(event.target.value));
+    }
+  };
+
+  const choseNewBirthDate = (event: any) => {
+    if (event.target.valueAsDate) {
+      dispatch(choseBirthDate(event.target.valueAsDate));
     }
   };
 
@@ -79,6 +87,11 @@ const Form: React.FC<IForm> = ({ store }) => {
             choseNewSex={choseNewSex}
             formSexList={formSexList.rus}
           />
+        </div>
+
+        <div className={styles.formRow}>
+          <label>{formDate.rus}</label>
+          <input type="date" onChange={choseNewBirthDate} />
         </div>
       </form>
 

@@ -18,7 +18,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-right: 75px;
+  margin-right: 45px;
   margin-bottom: 20px;
 }
 
@@ -32,6 +32,14 @@
 }
 
 .formRow select {
+  font-size: 1.2em;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  padding: 3px;
+}
+
+.formRow input {
   font-size: 1.2em;
   border: 0;
   border-radius: 5px;

@@ -5,4 +5,6 @@ export type InitialMainReducerType = {
   chosenSex: string;
   valueYears: number;
   statYear: number;
+  currentDate: Date;
+  birthDate: Date;
 };

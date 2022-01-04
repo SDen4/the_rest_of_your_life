@@ -1,4 +1,10 @@
-import { OPEN_FORM, CHOSE_COUNTRY, CHOSE_SEX, SAVE_RESULT } from './constants';
+import {
+  OPEN_FORM,
+  CHOSE_COUNTRY,
+  CHOSE_SEX,
+  SAVE_RESULT,
+  CHOSE_BIRTH_DATE,
+} from './constants';
 import { formSexList } from '../../constants/form';
 
 import data from '../../data/data.json';
@@ -18,6 +24,8 @@ const InitialState: InitialMainReducerType = {
   chosenSex: formSexList.rus[0],
   valueYears: 0,
   statYear: 0,
+  currentDate: new Date(),
+  birthDate: new Date(),
 };
 
 export const MainReducer = (
@@ -40,6 +48,9 @@ export const MainReducer = (
         valueYears: action.valueYears,
         statYear: action.statYear,
       };
+
+    case CHOSE_BIRTH_DATE:
+      return { ...state, birthDate: action.birthDate };
 
     default:
       return state;

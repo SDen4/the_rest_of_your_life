@@ -22,3 +22,8 @@ export const formButton = {
   rus: 'Рассчитать',
   eng: 'Calculate',
 };
+
+export const formDate = {
+  rus: 'Дата рождения',
+  eng: 'Birth date',
+};
