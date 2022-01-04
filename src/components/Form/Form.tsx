@@ -43,6 +43,7 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const choseNewBirthDate = (event: any) => {
+    console.log(event.target.valueAsDate, typeof event.target.valueAsDate);
     if (event.target.valueAsDate) {
       dispatch(choseBirthDate(event.target.valueAsDate));
     }
@@ -82,6 +83,7 @@ const Form: React.FC<IForm> = ({ store }) => {
             title={formNames.rus}
             choseNewSex={choseNewCountry}
             formSexList={store.countriesList}
+            currentValue={store.chosenCountry}
           />
         </div>
 
@@ -90,6 +92,7 @@ const Form: React.FC<IForm> = ({ store }) => {
             title={formSex.rus}
             choseNewSex={choseNewSex}
             formSexList={formSexList.rus}
+            currentValue={store.chosenSex}
           />
         </div>
 
