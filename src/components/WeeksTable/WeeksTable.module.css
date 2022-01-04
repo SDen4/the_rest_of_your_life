@@ -11,11 +11,24 @@
   background-color: olive;
 }
 
+.tableFullCell {
+  width: 14px;
+  border: 0;
+  padding: 0;
+}
+
+.tableFullCellRest {
+  width: 14px;
+  border: 0;
+  padding: 0;
+  background-color: olive;
+}
+
 .row {
   max-height: 12px;
 }
 
-.rowNumber {
+.rowNumber.rowNumber {
   font-size: 10px;
   background-color: transparent !important;
 }

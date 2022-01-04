@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { resultButton } from '../../constants/result';
+
 import { openForm, openResult } from '../../store/MainReducer/actions';
 
 import Button from '../../ui/Button';
@@ -23,7 +24,7 @@ const Result: React.FC<IResult> = ({ store }) => {
     <div>
       <h2>Итого чего-то там...</h2>
       <div className={styles.tableWrapper}>
-        <WeeksTable valueYears={store.valueYears} userYesrs={store.userYears} />
+        <WeeksTable valueYears={store.valueYears} userYears={store.userYears} />
       </div>
 
       <Button
