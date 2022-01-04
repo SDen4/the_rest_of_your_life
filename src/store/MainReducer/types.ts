@@ -1,5 +1,6 @@
 export type InitialMainReducerType = {
   formFlag: boolean;
+  resultFlag: boolean;
   countriesList: string[];
   chosenCountry: string;
   chosenSex: string;

@@ -16,6 +16,8 @@ import {
   choseBirthDate,
   choseCountry,
   choseSex,
+  openForm,
+  openResult,
   saveResult,
 } from '../../store/MainReducer/actions';
 import Button from '../../ui/Button';
@@ -66,6 +68,8 @@ const Form: React.FC<IForm> = ({ store }) => {
     const statYear = Number(totalData.dims.YEAR);
 
     dispatch(saveResult(valueYears, statYear));
+    dispatch(openForm(false));
+    dispatch(openResult(true));
   };
 
   return (

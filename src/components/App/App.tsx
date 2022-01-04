@@ -6,6 +6,7 @@ import { AppStateType } from '../../store/RootReducer';
 
 import Disclaimer from '../Disclaimer';
 import Form from '../Form';
+import Result from '../Result';
 
 import styles from './App.module.css';
 
@@ -16,7 +17,15 @@ function App() {
 
   return (
     <div className={styles.appWrapper}>
-      {!storeState.formFlag ? <Disclaimer /> : <Form store={storeState} />}
+      {!storeState.formFlag && !storeState.resultFlag && <Disclaimer />}
+
+      {storeState.formFlag && !storeState.resultFlag && (
+        <Form store={storeState} />
+      )}
+
+      {!storeState.formFlag && storeState.resultFlag && (
+        <Result store={storeState} />
+      )}
     </div>
   );
 }

@@ -4,12 +4,20 @@ import {
   CHOSE_SEX,
   SAVE_RESULT,
   CHOSE_BIRTH_DATE,
+  OPEN_RESULT,
 } from './constants';
 
 export const openForm = (formFlag: boolean) => {
   return {
     type: OPEN_FORM,
     formFlag,
+  } as const;
+};
+
+export const openResult = (resultFlag: boolean) => {
+  return {
+    type: OPEN_RESULT,
+    resultFlag,
   } as const;
 };
 
@@ -43,6 +51,7 @@ export const choseBirthDate = (birthDate: Date) => {
 };
 
 type openFormType = ReturnType<typeof openForm>;
+type openResultType = ReturnType<typeof openResult>;
 type choseCountryType = ReturnType<typeof choseCountry>;
 type choseSexType = ReturnType<typeof choseSex>;
 type saveResultType = ReturnType<typeof saveResult>;
@@ -50,6 +59,7 @@ type choseBirthDateType = ReturnType<typeof choseBirthDate>;
 
 export type ActionsType =
   | openFormType
+  | openResultType
   | choseCountryType
   | choseSexType
   | saveResultType

@@ -4,6 +4,7 @@ import {
   CHOSE_SEX,
   SAVE_RESULT,
   CHOSE_BIRTH_DATE,
+  OPEN_RESULT,
 } from './constants';
 import { formSexList } from '../../constants/form';
 
@@ -19,6 +20,7 @@ const dataCountriesList = Array.from(
 
 const InitialState: InitialMainReducerType = {
   formFlag: false,
+  resultFlag: false,
   countriesList: dataCountriesList,
   chosenCountry: dataCountriesList[0],
   chosenSex: formSexList.rus[0],
@@ -35,6 +37,9 @@ export const MainReducer = (
   switch (action.type) {
     case OPEN_FORM:
       return { ...state, formFlag: action.formFlag };
+
+    case OPEN_RESULT:
+      return { ...state, resultFlag: action.resultFlag };
 
     case CHOSE_COUNTRY:
       return { ...state, chosenCountry: action.chosenCountry };
