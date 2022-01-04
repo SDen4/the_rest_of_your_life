@@ -11,7 +11,7 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
   const tableCols = [];
   for (let i = 0; i < 52; i++) {
     tableCols.push(
-      <td className={styles.tableCell} height={10} key={i + 1000} />,
+      <td className={styles.tableCell} height={5} key={i + 1000} />,
     );
   }
 
@@ -24,7 +24,7 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
           styles.tableCell,
           restWeeks > i && styles.tableFullCellRest,
         )}
-        height={10}
+        height={5}
         key={i + 1000}
       />,
     );

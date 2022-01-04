@@ -1,34 +1,29 @@
 .tableCell {
-  width: 12px;
+  width: 10px;
   border: 1px solid #fff;
   padding: 0;
 }
 
 .tableFullCell td {
-  width: 14px;
+  width: 10px;
   border: 0;
   padding: 0;
   background-color: olive;
 }
 
 .tableFullCell {
-  width: 14px;
+  width: 10px;
   border: 0;
   padding: 0;
 }
 
 .tableFullCellRest {
-  width: 14px;
   border: 0;
   padding: 0;
   background-color: olive;
 }
 
-.row {
-  max-height: 12px;
-}
-
 .rowNumber.rowNumber {
-  font-size: 10px;
+  font-size: 9px;
   background-color: transparent !important;
 }
