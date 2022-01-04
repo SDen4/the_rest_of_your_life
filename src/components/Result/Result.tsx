@@ -11,6 +11,7 @@ import WeeksTable from '../WeeksTable';
 import { IResult } from './types';
 
 import styles from './Result.module.css';
+import ResultText from './assets/ResultText';
 
 const Result: React.FC<IResult> = ({ store }) => {
   const dispatch = useDispatch();
@@ -21,8 +22,8 @@ const Result: React.FC<IResult> = ({ store }) => {
   };
 
   return (
-    <div>
-      <h2>Итого чего-то там...</h2>
+    <div className={styles.resultWrapper}>
+      <ResultText store={store} />
       <div className={styles.tableWrapper}>
         <WeeksTable valueYears={store.valueYears} userYears={store.userYears} />
       </div>
