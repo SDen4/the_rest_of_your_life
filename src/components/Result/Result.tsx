@@ -6,7 +6,7 @@ const Result: React.FC<IResult> = ({ store }) => {
   return (
     <div>
       <h2>Итого чего-то там...</h2>
-      <WeeksTable />
+      <WeeksTable valueYears={store.valueYears} />
     </div>
   );
 };

@@ -1,1 +1,3 @@
-export interface IWeeksTable {}
+export interface IWeeksTable {
+  valueYears: number;
+}
