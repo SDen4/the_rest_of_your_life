@@ -53,3 +53,39 @@
   font-size: 2em;
   margin-bottom: 2em;
 }
+
+@media (max-width: 480px) {
+  .formComponent {
+    align-items: center;
+  }
+
+  .formWrapper {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .formRow {
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+
+  .formRow label {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  .formRow select {
+    font-size: 12px;
+    padding: 1px;
+    max-width: 250px;
+  }
+
+  .formRow input {
+    font-size: 12px;
+    padding: 1px;
+  }
+
+  .subTitle {
+    font-size: 16px;
+  }
+}
