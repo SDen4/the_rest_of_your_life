@@ -8,4 +8,5 @@ export type InitialMainReducerType = {
   statYear: number;
   currentDate: Date;
   birthDate: Date;
+  userYears: number;
 };

@@ -28,6 +28,7 @@ const InitialState: InitialMainReducerType = {
   statYear: 0,
   currentDate: new Date(),
   birthDate: new Date(),
+  userYears: 0,
 };
 
 export const MainReducer = (
@@ -55,7 +56,10 @@ export const MainReducer = (
       };
 
     case CHOSE_BIRTH_DATE:
-      return { ...state, birthDate: action.birthDate };
+      const end = state.currentDate.getTime();
+      const start = action.birthDate.getTime();
+      const userYears = (end - start) / 1000 / 60 / 60 / 24 / 365;
+      return { ...state, birthDate: action.birthDate, userYears: userYears };
 
     default:
       return state;

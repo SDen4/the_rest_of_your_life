@@ -1,13 +1,12 @@
 .tableCell {
-  border: 1px solid #fff;
   width: 12px;
-  /* height: 12px; */
+  border: 1px solid #fff;
   padding: 0;
 }
 
-.tableFullCell {
-  width: 13px;
-  height: 13px;
+.tableFullCell td {
+  width: 14px;
+  border: 0;
   padding: 0;
   background-color: olive;
 }
@@ -18,4 +17,5 @@
 
 .rowNumber {
   font-size: 10px;
+  background-color: transparent !important;
 }

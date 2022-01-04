@@ -1,10 +1,11 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import { IWeeksTable } from './types';
 
 import styles from './WeeksTable.module.css';
 
-const WeeksTable: React.FC<IWeeksTable> = ({ valueYears }) => {
+const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYesrs }) => {
   const tableCols = [];
   for (let i = 0; i < 52; i++) {
     tableCols.push(
@@ -16,7 +17,10 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears }) => {
     const arrToRender = [];
     for (let i = 1; i <= rowsNum; i++) {
       arrToRender.push(
-        <tr key={i + 1} className={styles.row}>
+        <tr
+          key={i + 1}
+          className={clsx(styles.row, userYesrs > i && styles.tableFullCell)}
+        >
           <td className={styles.rowNumber}>{i}</td>
           {tableCols}
         </tr>,
