@@ -20,6 +20,8 @@ import {
 
 import { IResultText } from './types';
 
+import styles from './ResultText.module.css';
+
 const ResultText: React.FC<IResultText> = ({ store }) => {
   return (
     <h2>
@@ -36,7 +38,9 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
       store.chosenSex === formSexList.rus[2]
         ? ''
         : ''}{' '}
-      {resultTextIs.rus} {store.valueYears} {resultTextYears.rus}.
+      {resultTextIs.rus}{' '}
+      <span className={styles.color}>{store.valueYears}</span>{' '}
+      {resultTextYears.rus}.
       <br />
       {resultTextData.rus} {resultTextWho.rus} {resultTextFor.rus}{' '}
       {store.statYear} {resultTextYearRus.rus}.
@@ -51,8 +55,11 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
       store.chosenSex === formSexList.eng[1]
         ? resultTextLivedWoman.rus
         : ''}{' '}
-      {store.userYears.toFixed(1)} {resultTextYears.rus}, {resultTextCons.rus}{' '}
-      {((store.userYears / store.valueYears) * 100).toFixed(1)}%{' '}
+      <span className={styles.color}>{store.userYears.toFixed(1)}</span>{' '}
+      {resultTextYears.rus}, {resultTextCons.rus}{' '}
+      <span className={styles.color}>
+        {((store.userYears / store.valueYears) * 100).toFixed(1)}%
+      </span>{' '}
       {resultTextAfterPers.rus}.
     </h2>
   );

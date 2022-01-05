@@ -69,6 +69,6 @@ export const resultTextCons = {
 };
 
 export const resultTextAfterPers = {
-  rus: 'от среднего срока жизни указанной вами страны',
+  rus: 'от среднего срока жизни указанной тобой страны',
   eng: 'of the average life of the country you specified',
 };
