@@ -1,1 +1,1 @@
-export const appLang = ['Рус', 'Eng'];
+export const appLang = { rus: 'Рус', eng: 'Eng' };

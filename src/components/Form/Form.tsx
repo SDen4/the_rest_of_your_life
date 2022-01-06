@@ -81,7 +81,7 @@ const Form: React.FC<IForm> = ({ store }) => {
 
   return (
     <div className={styles.formComponent}>
-      <h2 className={styles.subTitle}>{formTitle.rus}</h2>
+      <h2 className={styles.subTitle}>{formTitle[store.currentLang]}</h2>
 
       <form className={styles.formWrapper}>
         <div className={styles.formRow}>
@@ -89,21 +89,21 @@ const Form: React.FC<IForm> = ({ store }) => {
             onChange={choseNewCountry}
             list={store.countriesList}
             currentValue={store.chosenCountry}
-            title={formNames.rus}
+            title={formNames[store.currentLang]}
           />
         </div>
 
         <div className={styles.formRow}>
           <Select
             onChange={choseNewSex}
-            list={formSexList.rus}
+            list={formSexList[store.currentLang]}
             currentValue={store.chosenSex}
-            title={formSex.rus}
+            title={formSex[store.currentLang]}
           />
         </div>
 
         <div className={styles.formRow}>
-          <label>{formDate.rus}</label>
+          <label>{formDate[store.currentLang]}</label>
           <input
             type="date"
             onChange={choseNewBirthDate}
@@ -113,7 +113,7 @@ const Form: React.FC<IForm> = ({ store }) => {
       </form>
 
       <Button
-        buttonText={formButton.rus}
+        buttonText={formButton[store.currentLang]}
         buttonOnClickHandler={calculateHandler}
       />
     </div>

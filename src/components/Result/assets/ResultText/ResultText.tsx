@@ -25,42 +25,44 @@ import styles from './ResultText.module.css';
 const ResultText: React.FC<IResultText> = ({ store }) => {
   return (
     <h2>
-      {resultIn.rus} {store.chosenCountry} {resultText1.rus}{' '}
+      {resultIn[store.currentLang]} {store.chosenCountry}{' '}
+      {resultText1[store.currentLang]}{' '}
       {store.chosenSex === formSexList.rus[0] ||
       store.chosenSex === formSexList.eng[0]
-        ? resultTextMan.rus
+        ? resultTextMan[store.currentLang]
         : ''}
       {store.chosenSex === formSexList.rus[1] ||
       store.chosenSex === formSexList.eng[1]
-        ? resultTextWoman.rus
+        ? resultTextWoman[store.currentLang]
         : ''}
       {store.chosenSex === formSexList.eng[2] ||
       store.chosenSex === formSexList.rus[2]
         ? ''
         : ''}{' '}
-      {resultTextIs.rus}{' '}
+      {resultTextIs[store.currentLang]}{' '}
       <span className={styles.color}>{store.valueYears}</span>{' '}
-      {resultTextYears.rus}.
+      {resultTextYears[store.currentLang]}.
       <br />
-      {resultTextData.rus} {resultTextWho.rus} {resultTextFor.rus}{' '}
-      {store.statYear} {resultTextYearRus.rus}.
+      {resultTextData[store.currentLang]} {resultTextWho[store.currentLang]}{' '}
+      {resultTextFor[store.currentLang]} {store.statYear}{' '}
+      {resultTextYearRus[store.currentLang]}.
       <br />
       {store.chosenSex === formSexList.rus[0] ||
       store.chosenSex === formSexList.eng[0] ||
       store.chosenSex === formSexList.eng[2] ||
       store.chosenSex === formSexList.rus[2]
-        ? resultTextLivedMan.rus
+        ? resultTextLivedMan[store.currentLang]
         : ''}{' '}
       {store.chosenSex === formSexList.rus[1] ||
       store.chosenSex === formSexList.eng[1]
-        ? resultTextLivedWoman.rus
+        ? resultTextLivedWoman[store.currentLang]
         : ''}{' '}
       <span className={styles.color}>{store.userYears.toFixed(1)}</span>{' '}
-      {resultTextYears.rus}, {resultTextCons.rus}{' '}
+      {resultTextYears[store.currentLang]}, {resultTextCons[store.currentLang]}{' '}
       <span className={styles.color}>
         {((store.userYears / store.valueYears) * 100).toFixed(1)}%
       </span>{' '}
-      {resultTextAfterPers.rus}.
+      {resultTextAfterPers[store.currentLang]}.
     </h2>
   );
 };

@@ -5,8 +5,10 @@ import {
   SAVE_RESULT,
   CHOSE_BIRTH_DATE,
   OPEN_RESULT,
+  CHOSE_LANG,
 } from './constants';
 import { formSexList } from '../../constants/form';
+import { appLang } from '../../constants/app';
 
 import data from '../../data/data.json';
 
@@ -29,6 +31,7 @@ const InitialState: InitialMainReducerType = {
   currentDate: new Date(),
   birthDate: new Date(),
   userYears: 0,
+  currentLang: Object.keys(appLang)[0],
 };
 
 export const MainReducer = (
@@ -60,6 +63,15 @@ export const MainReducer = (
       const start = action.birthDate.getTime();
       const userYears = (end - start) / 1000 / 60 / 60 / 24 / 365;
       return { ...state, birthDate: action.birthDate, userYears: userYears };
+
+    case CHOSE_LANG:
+      return {
+        ...state,
+        currentLang:
+          action.chosenLang === 'Eng'
+            ? Object.keys(appLang)[1]
+            : Object.keys(appLang)[0],
+      };
 
     default:
       return state;

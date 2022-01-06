@@ -9,4 +9,5 @@ export type InitialMainReducerType = {
   currentDate: Date;
   birthDate: Date;
   userYears: number;
+  currentLang: string;
 };

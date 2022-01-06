@@ -29,7 +29,7 @@ const Result: React.FC<IResult> = ({ store }) => {
       </div>
 
       <Button
-        buttonText={resultButton.rus}
+        buttonText={resultButton[store.currentLang]}
         buttonOnClickHandler={backHandler}
       />
     </div>

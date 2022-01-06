@@ -5,6 +5,7 @@ import {
   SAVE_RESULT,
   CHOSE_BIRTH_DATE,
   OPEN_RESULT,
+  CHOSE_LANG,
 } from './constants';
 
 export const openForm = (formFlag: boolean) => {
@@ -50,12 +51,20 @@ export const choseBirthDate = (birthDate: Date) => {
   } as const;
 };
 
+export const choseLang = (chosenLang: string) => {
+  return {
+    type: CHOSE_LANG,
+    chosenLang,
+  } as const;
+};
+
 type openFormType = ReturnType<typeof openForm>;
 type openResultType = ReturnType<typeof openResult>;
 type choseCountryType = ReturnType<typeof choseCountry>;
 type choseSexType = ReturnType<typeof choseSex>;
 type saveResultType = ReturnType<typeof saveResult>;
 type choseBirthDateType = ReturnType<typeof choseBirthDate>;
+type choseLangType = ReturnType<typeof choseLang>;
 
 export type ActionsType =
   | openFormType
@@ -63,4 +72,5 @@ export type ActionsType =
   | choseCountryType
   | choseSexType
   | saveResultType
-  | choseBirthDateType;
+  | choseBirthDateType
+  | choseLangType;

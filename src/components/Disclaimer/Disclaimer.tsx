@@ -8,9 +8,11 @@ import Button from '../../ui/Button';
 import { DisclaimerText } from '../../constants/disclaimer';
 import { DisclaimerButtonText } from '../../constants/disclaimer';
 
+import { IDisclaimer } from './types';
+
 import styles from './Disclaimer.module.css';
 
-const Disclaimer = () => {
+const Disclaimer: React.FC<IDisclaimer> = ({ lang }) => {
   const dispatch = useDispatch();
 
   const buttonOnClickHandler = () => {
@@ -20,7 +22,7 @@ const Disclaimer = () => {
   return (
     <>
       <div className={styles.disclaimerText}>
-        {DisclaimerText.rus.split('.').map((el) => {
+        {DisclaimerText[lang].split('.').map((el: any) => {
           if (!el.length) return null;
 
           const text = `${el.trim()}.`;
@@ -35,7 +37,7 @@ const Disclaimer = () => {
       </div>
       <div className={styles.buttonWrapper}>
         <Button
-          buttonText={DisclaimerButtonText.rus}
+          buttonText={DisclaimerButtonText[lang]}
           buttonOnClickHandler={buttonOnClickHandler}
         />
       </div>
