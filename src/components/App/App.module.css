@@ -21,6 +21,8 @@
   position: absolute;
   top: 15px;
   right: 15px;
+  background-color: olive;
+  color: #fff;
 }
 
 @media (max-width: 480px) {

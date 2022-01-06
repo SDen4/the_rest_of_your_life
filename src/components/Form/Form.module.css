@@ -37,6 +37,8 @@
   border-radius: 5px;
   outline: none;
   padding: 3px;
+  background-color: olive;
+  color: #fff;
 }
 
 .formRow input {
@@ -45,6 +47,8 @@
   border-radius: 5px;
   outline: none;
   padding: 3px;
+  background-color: olive;
+  color: #fff;
 }
 
 .subTitle {
