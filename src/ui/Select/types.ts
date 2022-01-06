@@ -1,6 +1,6 @@
 export interface ISelect {
-  title: string;
-  choseNewSex: (event: any) => void;
-  formSexList: string[];
+  onChange: (event: any) => void;
+  list: string[];
   currentValue: string;
+  title?: string;
 }

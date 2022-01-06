@@ -86,19 +86,19 @@ const Form: React.FC<IForm> = ({ store }) => {
       <form className={styles.formWrapper}>
         <div className={styles.formRow}>
           <Select
-            title={formNames.rus}
-            choseNewSex={choseNewCountry}
-            formSexList={store.countriesList}
+            onChange={choseNewCountry}
+            list={store.countriesList}
             currentValue={store.chosenCountry}
+            title={formNames.rus}
           />
         </div>
 
         <div className={styles.formRow}>
           <Select
-            title={formSex.rus}
-            choseNewSex={choseNewSex}
-            formSexList={formSexList.rus}
+            onChange={choseNewSex}
+            list={formSexList.rus}
             currentValue={store.chosenSex}
+            title={formSex.rus}
           />
         </div>
 

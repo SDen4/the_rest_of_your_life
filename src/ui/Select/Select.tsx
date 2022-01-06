@@ -2,17 +2,12 @@ import React from 'react';
 
 import { ISelect } from './types';
 
-const Select: React.FC<ISelect> = ({
-  title,
-  choseNewSex,
-  formSexList,
-  currentValue,
-}) => {
+const Select: React.FC<ISelect> = ({ title, onChange, list, currentValue }) => {
   return (
     <>
-      <label>{title}</label>
-      <select onChange={choseNewSex} value={currentValue}>
-        {formSexList.map((el) => (
+      {title && <label>{title}</label>}
+      <select onChange={onChange} value={currentValue}>
+        {list.map((el) => (
           <option value={el} key={el}>
             {el}
           </option>

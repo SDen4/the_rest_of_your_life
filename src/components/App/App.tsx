@@ -1,8 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { InitialMainReducerType } from '../../store/MainReducer/types';
+
+import { appLang } from '../../constants/app';
 
 import { AppStateType } from '../../store/RootReducer';
+import { InitialMainReducerType } from '../../store/MainReducer/types';
+
+import Select from '../../ui/Select';
 
 import Disclaimer from '../Disclaimer';
 import Form from '../Form';
@@ -17,6 +21,14 @@ function App() {
 
   return (
     <div className={styles.appWrapper}>
+      <header className={styles.header}>
+        <Select
+          onChange={() => null}
+          list={appLang}
+          currentValue={appLang[0]}
+        />
+      </header>
+
       {!storeState.formFlag && !storeState.resultFlag && <Disclaimer />}
 
       {storeState.formFlag && !storeState.resultFlag && (
