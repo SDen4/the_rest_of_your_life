@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { format } from 'date-fns';
 
 import {
   formButton,
@@ -42,11 +43,16 @@ const Form: React.FC<IForm> = ({ store }) => {
     }
   };
 
+  const [localBirthDate, setLocalBirthDate] = useState(
+    format(store.birthDate, 'yyyy-MM-dd'),
+  );
+
   const choseNewBirthDate = (event: any) => {
-    console.log(event.target.valueAsDate, typeof event.target.valueAsDate);
     if (event.target.valueAsDate) {
       dispatch(choseBirthDate(event.target.valueAsDate));
     }
+    if (event.target.valueAsDate)
+      setLocalBirthDate(() => format(event.target.valueAsDate, 'yyyy-MM-dd'));
   };
 
   const calculateHandler = () => {
@@ -98,7 +104,11 @@ const Form: React.FC<IForm> = ({ store }) => {
 
         <div className={styles.formRow}>
           <label>{formDate.rus}</label>
-          <input type="date" onChange={choseNewBirthDate} />
+          <input
+            type="date"
+            onChange={choseNewBirthDate}
+            value={localBirthDate}
+          />
         </div>
       </form>
 
