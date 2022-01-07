@@ -2,11 +2,17 @@ import React from 'react';
 
 import { ISelect } from './types';
 
+import styles from './Select.module.css';
+
 const Select: React.FC<ISelect> = ({ title, onChange, list, currentValue }) => {
   return (
     <>
-      {title && <label>{title}</label>}
-      <select onChange={onChange} value={currentValue}>
+      {title && <label className={styles.label}>{title}</label>}
+      <select
+        onChange={onChange}
+        value={currentValue}
+        className={styles.select}
+      >
         {list.map((el) => (
           <option value={el} key={el}>
             {el}

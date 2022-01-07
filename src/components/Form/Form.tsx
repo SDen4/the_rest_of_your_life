@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { format } from 'date-fns';
+import clsx from 'clsx';
 
 import {
   formButton,
@@ -25,8 +26,9 @@ import Button from '../../ui/Button';
 import Select from '../../ui/Select';
 import currentSexForSearch from '../../utils/currentSexForSearch';
 
-import styles from './Form.module.css';
 import { IForm } from './types';
+
+import styles from './Form.module.css';
 
 const Form: React.FC<IForm> = ({ store }) => {
   const dispatch = useDispatch();
@@ -102,7 +104,7 @@ const Form: React.FC<IForm> = ({ store }) => {
           />
         </div>
 
-        <div className={styles.formRow}>
+        <div className={clsx(styles.formRow, styles.dateWrapper)}>
           <label>{formDate[store.currentLang]}</label>
           <input
             type="date"
