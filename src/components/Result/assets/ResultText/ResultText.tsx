@@ -11,6 +11,7 @@ import {
   resultTextIs,
   resultTextLivedMan,
   resultTextLivedWoman,
+  resultTextLucky,
   resultTextMan,
   resultTextWho,
   resultTextWoman,
@@ -47,6 +48,8 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
       {resultTextFor[store.currentLang]} {store.statYear}{' '}
       {resultTextYearRus[store.currentLang]}.
       <br />
+      {store.userYears > store.valueYears &&
+        resultTextLucky[store.currentLang]}{' '}
       {store.chosenSex === formSexList.rus[0] ||
       store.chosenSex === formSexList.eng[0] ||
       store.chosenSex === formSexList.eng[2] ||

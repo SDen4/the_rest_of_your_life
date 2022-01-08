@@ -32,11 +32,17 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
 
   const tableInners = (rowsNum: number, tableCols: any[]) => {
     const arrToRender = [];
-    for (let i = 1; i <= rowsNum; i++) {
+    const tableRows = valueYears > userYears ? rowsNum : userYears;
+
+    for (let i = 1; i <= tableRows; i++) {
       arrToRender.push(
         <tr
           key={i + 1}
-          className={clsx(styles.row, userYears > i && styles.tableFullCell)}
+          className={clsx(
+            styles.row,
+            userYears > i && styles.tableFullCell,
+            i > rowsNum && styles.tableExtraCell,
+          )}
         >
           {i === roundUserYears ? tableColsRest : tableCols}
         </tr>,

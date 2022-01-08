@@ -55,7 +55,7 @@ export const resultTextFor: any = {
 
 export const resultTextLivedMan: any = {
   rus: 'Ты прожил',
-  eng: 'You have lived for',
+  eng: "You've lived for",
 };
 
 export const resultTextLivedWoman: any = {
@@ -71,4 +71,9 @@ export const resultTextCons: any = {
 export const resultTextAfterPers: any = {
   rus: 'от среднего срока жизни указанной тобой страны',
   eng: 'of the average life of the country you specified',
+};
+
+export const resultTextLucky: any = {
+  rus: 'Похоже, тебе очень повезло.',
+  eng: "It seems you're lucky.",
 };
