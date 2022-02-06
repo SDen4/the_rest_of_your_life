@@ -79,7 +79,7 @@ export const resultTextLucky: any = {
 };
 
 export const resultYearsTextinTheTable: any = {
-  rus: 'Тебе осталось еще прожить примерно',
+  rus: 'Тебе осталось прожить еще примерно',
   eng: 'You have about',
 };
 
