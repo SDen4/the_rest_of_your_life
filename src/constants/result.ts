@@ -77,3 +77,8 @@ export const resultTextLucky: any = {
   rus: 'Похоже, тебе очень повезло.',
   eng: "It seems you're lucky.",
 };
+
+export const resultYearsTextinTheTable: any = {
+  rus: 'Тебе осталось прожить примерно',
+  eng: 'You have about to live',
+};

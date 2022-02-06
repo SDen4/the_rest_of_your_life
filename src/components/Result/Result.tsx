@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { resultButton, resultTextYears } from '../../constants/result';
+import {
+  resultButton,
+  resultTextYears,
+  resultYearsTextinTheTable,
+} from '../../constants/result';
 
 import { openForm, openResult } from '../../store/MainReducer/actions';
 
@@ -43,7 +47,7 @@ const Result: React.FC<IResult> = ({ store }) => {
         {show && (
           <div className={styles.showInfoWrapper} style={{ height: height }}>
             <h2>
-              Тебе осталось прожить примерно
+              {resultYearsTextinTheTable[store.currentLang]}
               <span>{(store.valueYears - store.userYears).toFixed(1)}</span>
               {resultTextYears[store.currentLang]}
             </h2>
