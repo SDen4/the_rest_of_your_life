@@ -79,11 +79,41 @@ export const resultTextLucky: any = {
 };
 
 export const resultYearsTextinTheTable: any = {
-  rus: 'Тебе осталось прожить примерно',
-  eng: 'You have about to live',
+  rus: 'Тебе осталось еще прожить примерно',
+  eng: 'You have about',
 };
 
-export const resultYearsTextInTheTableLucky: any = {
+export const resultTextYears2: any = {
+  rus: 'лет (года), или...',
+  eng: 'more years to live, or...',
+};
+
+export const resultYearsTextInTheTableLuckyMan: any = {
   rus: 'Ты - счастливчик! Ты прожил больше среднего на',
   eng: 'You are lucky! You lived more than average by',
+};
+
+export const resultYearsTextInTheTableLuckyWooman: any = {
+  rus: 'А ты счастливая! Ты прожила больше среднего на',
+  eng: 'You are lucky! You lived more than average by',
+};
+
+export const resultTextOr: any = {
+  rus: '... или',
+  eng: '... or',
+};
+
+export const resultTextWeek: any = {
+  rus: 'недель.',
+  eng: 'weeks.',
+};
+
+export const resultTextFinal: any = {
+  rus: 'Цени свою жизнь!',
+  eng: 'Appreciate your life!',
+};
+
+export const resultTextFinalLucky: any = {
+  rus: 'Не останавливайся на достигнутом!',
+  eng: "Don't stop there!",
 };

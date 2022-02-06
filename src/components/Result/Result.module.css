@@ -5,9 +5,25 @@
   transition: 0.3s;
 }
 
+.tableWrapperAnime {
+  animation: anime 1s ease infinite;
+}
+
 .tableWrapper:hover {
-  border-color: olive;
+  border-color: olive !important;
   cursor: pointer;
+}
+
+@keyframes anime {
+  0% {
+    border-color: olive;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: olive;
+  }
 }
 
 .resultWrapper {
@@ -23,11 +39,12 @@
 }
 
 .showInfoWrapper {
-  width: 370px;
+  width: 340px;
   max-width: 370px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 15px;
 }
 
 .showInfoWrapper span {
