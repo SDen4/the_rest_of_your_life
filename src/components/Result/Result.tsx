@@ -5,6 +5,7 @@ import {
   resultButton,
   resultTextYears,
   resultYearsTextinTheTable,
+  resultYearsTextInTheTableLucky,
 } from '../../constants/result';
 
 import { openForm, openResult } from '../../store/MainReducer/actions';
@@ -46,11 +47,19 @@ const Result: React.FC<IResult> = ({ store }) => {
 
         {show && (
           <div className={styles.showInfoWrapper} style={{ height: height }}>
-            <h2>
-              {resultYearsTextinTheTable[store.currentLang]}
-              <span>{(store.valueYears - store.userYears).toFixed(1)}</span>
-              {resultTextYears[store.currentLang]}
-            </h2>
+            {store.userYears < store.valueYears ? (
+              <h2>
+                {resultYearsTextinTheTable[store.currentLang]}
+                <span>{(store.valueYears - store.userYears).toFixed(1)}</span>
+                {resultTextYears[store.currentLang]}
+              </h2>
+            ) : (
+              <h2>
+                {resultYearsTextInTheTableLucky[store.currentLang]}
+                <span>{(store.userYears - store.valueYears).toFixed(1)}</span>
+                {resultTextYears[store.currentLang]}
+              </h2>
+            )}
           </div>
         )}
       </div>

@@ -82,3 +82,8 @@ export const resultYearsTextinTheTable: any = {
   rus: 'Тебе осталось прожить примерно',
   eng: 'You have about to live',
 };
+
+export const resultYearsTextInTheTableLucky: any = {
+  rus: 'Ты - счастливчик! Ты прожил больше среднего на',
+  eng: 'You are lucky! You lived more than average by',
+};
