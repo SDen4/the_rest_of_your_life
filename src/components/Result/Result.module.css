@@ -1,5 +1,13 @@
 .tableWrapper {
   margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.tableWrapper:hover {
+  border-color: olive;
+  cursor: pointer;
 }
 
 .resultWrapper {
@@ -12,6 +20,19 @@
 .resultWrapper h2 {
   width: 100%;
   text-align: center;
+}
+
+.showInfoWrapper {
+  width: 370px;
+  max-width: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showInfoWrapper span {
+  margin: 0 5px;
+  color: olive;
 }
 
 @media (max-width: 480px) {
