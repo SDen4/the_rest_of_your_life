@@ -1,44 +1,36 @@
-import {
-  OPEN_FORM,
-  CHOSE_COUNTRY,
-  CHOSE_SEX,
-  SAVE_RESULT,
-  CHOSE_BIRTH_DATE,
-  OPEN_RESULT,
-  CHOSE_LANG,
-} from './constants';
+import * as CONST from './constants';
 
 export const openForm = (formFlag: boolean) => {
   return {
-    type: OPEN_FORM,
+    type: CONST.OPEN_FORM,
     formFlag,
   } as const;
 };
 
 export const openResult = (resultFlag: boolean) => {
   return {
-    type: OPEN_RESULT,
+    type: CONST.OPEN_RESULT,
     resultFlag,
   } as const;
 };
 
 export const choseCountry = (chosenCountry: string) => {
   return {
-    type: CHOSE_COUNTRY,
+    type: CONST.CHOSE_COUNTRY,
     chosenCountry,
   } as const;
 };
 
 export const choseSex = (chosenSex: string) => {
   return {
-    type: CHOSE_SEX,
+    type: CONST.CHOSE_SEX,
     chosenSex,
   } as const;
 };
 
 export const saveResult = (valueYears: number, statYear: number) => {
   return {
-    type: SAVE_RESULT,
+    type: CONST.SAVE_RESULT,
     valueYears,
     statYear,
   } as const;
@@ -46,14 +38,14 @@ export const saveResult = (valueYears: number, statYear: number) => {
 
 export const choseBirthDate = (birthDate: Date) => {
   return {
-    type: CHOSE_BIRTH_DATE,
+    type: CONST.CHOSE_BIRTH_DATE,
     birthDate,
   } as const;
 };
 
 export const choseLang = (chosenLang: string) => {
   return {
-    type: CHOSE_LANG,
+    type: CONST.CHOSE_LANG,
     chosenLang,
   } as const;
 };

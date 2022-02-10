@@ -1,12 +1,4 @@
-import {
-  OPEN_FORM,
-  CHOSE_COUNTRY,
-  CHOSE_SEX,
-  SAVE_RESULT,
-  CHOSE_BIRTH_DATE,
-  OPEN_RESULT,
-  CHOSE_LANG,
-} from './constants';
+import * as CONST from './constants';
 import { formSexList } from '../../constants/form';
 import { appLang } from '../../constants/app';
 
@@ -39,32 +31,32 @@ export const MainReducer = (
   action: ActionsType,
 ): typeof state => {
   switch (action.type) {
-    case OPEN_FORM:
+    case CONST.OPEN_FORM:
       return { ...state, formFlag: action.formFlag };
 
-    case OPEN_RESULT:
+    case CONST.OPEN_RESULT:
       return { ...state, resultFlag: action.resultFlag };
 
-    case CHOSE_COUNTRY:
+    case CONST.CHOSE_COUNTRY:
       return { ...state, chosenCountry: action.chosenCountry };
 
-    case CHOSE_SEX:
+    case CONST.CHOSE_SEX:
       return { ...state, chosenSex: action.chosenSex };
 
-    case SAVE_RESULT:
+    case CONST.SAVE_RESULT:
       return {
         ...state,
         valueYears: action.valueYears,
         statYear: action.statYear,
       };
 
-    case CHOSE_BIRTH_DATE:
+    case CONST.CHOSE_BIRTH_DATE:
       const end = state.currentDate.getTime();
       const start = action.birthDate.getTime();
       const userYears = (end - start) / 1000 / 60 / 60 / 24 / 365;
       return { ...state, birthDate: action.birthDate, userYears: userYears };
 
-    case CHOSE_LANG:
+    case CONST.CHOSE_LANG:
       return {
         ...state,
         currentLang:
