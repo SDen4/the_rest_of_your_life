@@ -6,6 +6,12 @@
   padding: 3px;
   background-color: olive;
   color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.select:hover {
+  background-color: olivedrab;
 }
 
 .label {
