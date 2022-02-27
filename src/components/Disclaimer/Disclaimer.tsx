@@ -22,19 +22,11 @@ const Disclaimer: React.FC<IDisclaimer> = ({ lang }) => {
   return (
     <>
       <div className={styles.disclaimerText}>
-        {DisclaimerText[lang].split('.').map((el: any) => {
-          if (!el.length) return null;
-
-          const text = `${el.trim()}.`;
-
-          return (
-            <div key={el}>
-              <br />
-              <p>{text}</p>
-            </div>
-          );
-        })}
+        <div>
+          <p>{DisclaimerText[lang]}</p>
+        </div>
       </div>
+
       <div className={styles.buttonWrapper}>
         <Button
           buttonText={DisclaimerButtonText[lang]}
