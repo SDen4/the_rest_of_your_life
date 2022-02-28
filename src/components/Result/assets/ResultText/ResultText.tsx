@@ -16,12 +16,12 @@ import {
   resultTextWho,
   resultTextWoman,
   resultTextYearRus,
-  resultTextYears,
 } from '../../../../constants/result';
 
 import { IResultText } from './types';
 
 import styles from './ResultText.module.css';
+import inflection from '../../../../utils/inflection';
 
 const ResultText: React.FC<IResultText> = ({ store }) => {
   return (
@@ -41,8 +41,10 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
         ? ''
         : ''}{' '}
       {resultTextIs[store.currentLang]}{' '}
-      <span className={styles.color}>{store.valueYears}</span>{' '}
-      {resultTextYears[store.currentLang]}.
+      <span className={styles.color}>
+        {inflection(store.valueYears, store.currentLang)}
+      </span>
+      .
       <br />
       {resultTextData[store.currentLang]} {resultTextWho[store.currentLang]}{' '}
       {resultTextFor[store.currentLang]} {store.statYear}{' '}
@@ -60,8 +62,10 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
       store.chosenSex === formSexList.eng[1]
         ? resultTextLivedWoman[store.currentLang]
         : ''}{' '}
-      <span className={styles.color}>{store.userYears.toFixed(1)}</span>{' '}
-      {resultTextYears[store.currentLang]}, {resultTextCons[store.currentLang]}{' '}
+      <span className={styles.color}>
+        {inflection(store.userYears, store.currentLang)}
+      </span>
+      , {resultTextCons[store.currentLang]}{' '}
       <span className={styles.color}>
         {((store.userYears / store.valueYears) * 100).toFixed(1)}%
       </span>{' '}
