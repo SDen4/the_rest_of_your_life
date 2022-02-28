@@ -7,8 +7,7 @@ import {
   resultTextFinalLucky,
   resultTextOr,
   resultTextWeek,
-  resultTextYears,
-  resultTextYears2,
+  resultTextOr2,
   resultYearsTextinTheTable,
   resultYearsTextInTheTableLuckyMan,
   resultYearsTextInTheTableLuckyWooman,
@@ -25,6 +24,7 @@ import styles from './Result.module.css';
 import ResultText from './assets/ResultText';
 import { formSexList } from '../../constants/form';
 import clsx from 'clsx';
+import inflection from '../../utils/inflection';
 
 const Result: React.FC<IResult> = ({ store }) => {
   const dispatch = useDispatch();
@@ -73,8 +73,13 @@ const Result: React.FC<IResult> = ({ store }) => {
             {store.userYears < store.valueYears ? (
               <h2>
                 {resultYearsTextinTheTable[store.currentLang]}
-                <span>{(store.valueYears - store.userYears).toFixed(1)}</span>
-                {resultTextYears2[store.currentLang]}
+                <span>
+                  {inflection(
+                    store.valueYears - store.userYears,
+                    store.currentLang,
+                  )}
+                </span>
+                {resultTextOr2[store.currentLang]}
               </h2>
             ) : (
               <h2>
@@ -84,8 +89,12 @@ const Result: React.FC<IResult> = ({ store }) => {
                 store.chosenSex === formSexList.rus[2]
                   ? resultYearsTextInTheTableLuckyMan[store.currentLang]
                   : resultYearsTextInTheTableLuckyWooman[store.currentLang]}
-                <span>{(store.userYears - store.valueYears).toFixed(1)}</span>
-                {resultTextYears[store.currentLang]}
+                <span>
+                  {inflection(
+                    store.userYears - store.valueYears,
+                    store.currentLang,
+                  )}
+                </span>
               </h2>
             )}
           </div>

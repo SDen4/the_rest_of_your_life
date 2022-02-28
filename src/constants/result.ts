@@ -28,11 +28,6 @@ export const resultTextIs: any = {
   eng: 'is',
 };
 
-export const resultTextYears: any = {
-  rus: 'лет (года)',
-  eng: 'years',
-};
-
 export const resultTextData: any = {
   rus: 'Это данные',
   eng: 'This is',
@@ -83,11 +78,6 @@ export const resultYearsTextinTheTable: any = {
   eng: 'You have about',
 };
 
-export const resultTextYears2: any = {
-  rus: 'лет (года), или...',
-  eng: 'more years to live, or...',
-};
-
 export const resultYearsTextInTheTableLuckyMan: any = {
   rus: 'Ты - счастливчик! Ты прожил больше среднего на',
   eng: 'You are lucky! You lived more than average by',
@@ -101,6 +91,11 @@ export const resultYearsTextInTheTableLuckyWooman: any = {
 export const resultTextOr: any = {
   rus: '... или',
   eng: '... or',
+};
+
+export const resultTextOr2: any = {
+  rus: ', или...',
+  eng: ', or...',
 };
 
 export const resultTextWeek: any = {
