@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { appLang } from '../../constants/app';
@@ -15,7 +15,6 @@ import Form from '../Form';
 import Result from '../Result';
 
 import styles from './App.module.css';
-import { searchRequest } from '../../store/Search/ducks';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,10 +28,6 @@ function App() {
       dispatch(choseLang(event.target.value));
     }
   };
-
-  useEffect(() => {
-    dispatch(searchRequest('Germany'));
-  }, [dispatch]);
 
   return (
     <div className={styles.appWrapper}>

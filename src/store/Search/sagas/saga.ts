@@ -5,17 +5,22 @@ import { searchAdd, searchRequest } from '../ducks';
 import { API } from '../../../utils/api';
 
 async function getData(countryName: string) {
-  const params: any = {
-    // method: 'POST',
-    body: JSON.stringify({
-      q: countryName,
-      source: 'en',
-      target: 'es',
-    }),
-    headers: { 'Content-Type': 'application/json' },
+  const params = new URLSearchParams();
+  params.append('source_language', 'en');
+  params.append('target_language', 'ru');
+  params.append('text', countryName);
+
+  const config = {
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'x-rapidapi-host': 'text-translator2.p.rapidapi.com',
+      'x-rapidapi-key': '98974f94fdmshf0e666910f99f56p166f4ejsn57d787efb8c9',
+    },
   };
 
-  const response = await API.post('translate', params).then((res) => res.data);
+  const response = await API.post('translate', params, config).then(
+    (res) => res.data,
+  );
   console.log(response);
   return response;
 }
