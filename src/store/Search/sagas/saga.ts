@@ -3,6 +3,7 @@ import { put, select, takeEvery } from 'redux-saga/effects';
 import {
   form,
   result,
+  saveBirthDate,
   saveResult,
   searchAdd,
   searchRequestSaga,
@@ -13,13 +14,14 @@ import data from '../../../data/data.json';
 import { API } from '../../../utils/api';
 import currentSexForSearch from '../../../utils/currentSexForSearch';
 
-import { selectCountry } from '../../MainReducer/selectors/selectors';
 import {
   selectChosenSex,
   selectChosenLang,
+  selectCurrentDate,
+  selectCountry,
 } from '../../Search/selectors/selectors';
 
-import { loading } from '../ducks';
+import { loading, birthDateSaga } from '../ducks';
 
 async function getData(countryName: string) {
   const params = new URLSearchParams();
@@ -94,6 +96,28 @@ function* getSearchItem() {
   if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
 }
 
+function* getBirthDate(action: any) {
+  const birthDate: Date = yield action.payload;
+
+  console.log(birthDate);
+
+  const end: Date = yield select(selectCurrentDate);
+  const start: Date = yield birthDate;
+
+  const userYears: number = yield (end.getTime() - start.getTime()) /
+    1000 /
+    60 /
+    60 /
+    24 /
+    365;
+
+  yield put({
+    type: saveBirthDate.toString(),
+    payload: { birthDate, userYears },
+  });
+}
+
 export function* rootSearchSaga() {
   yield takeEvery(searchRequestSaga, getSearchItem);
+  yield takeEvery(birthDateSaga, getBirthDate);
 }

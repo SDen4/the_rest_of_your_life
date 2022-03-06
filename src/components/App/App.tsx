@@ -3,9 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { appLang } from '../../constants/app';
 
-import { AppStateType } from '../../store/RootReducer';
-import { InitialMainReducerType } from '../../store/MainReducer/types';
-
 import { choseLang } from '../../store/Search/ducks';
 
 import {
@@ -30,10 +27,6 @@ function App() {
   const loading: boolean = useSelector(selectLoadingFlag);
   const formFlag: boolean = useSelector(selectFormFlag);
   const resultFlag: boolean = useSelector(selectResultFlag);
-
-  const storeState = useSelector<AppStateType, InitialMainReducerType>(
-    (store) => store.main,
-  );
 
   const changeLang = (event: any) => {
     if (event.target.value) {
@@ -69,9 +62,9 @@ function App() {
 
           {!formFlag && !resultFlag && <Disclaimer lang={lang} />}
 
-          {formFlag && !resultFlag && <Form store={storeState} />}
+          {formFlag && !resultFlag && <Form />}
 
-          {!formFlag && resultFlag && <Result store={storeState} />}
+          {!formFlag && resultFlag && <Result />}
         </div>
       )}
     </>

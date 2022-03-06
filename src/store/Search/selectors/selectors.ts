@@ -41,3 +41,28 @@ export const selectStatYear = createSelector(
   (store: AppStateType) => store.search.savedResult.statYear,
   (chosenLang) => chosenLang,
 );
+
+export const selectBirthDate = createSelector(
+  (store: AppStateType) => store.search.savedBirthDate.birthDate,
+  (birthDate) => birthDate,
+);
+
+export const selectUserYears = createSelector(
+  (store: AppStateType) => store.search.savedBirthDate.userYears,
+  (userYears) => userYears,
+);
+
+export const selectCurrentDate = createSelector(
+  (store: AppStateType) => store.search.savedInitData.currentDate,
+  (currentDate) => currentDate,
+);
+
+export const selectCountriesList = createSelector(
+  (store: AppStateType) => store.search.savedInitData.countriesList,
+  (countriesList) => countriesList,
+);
+
+export const selectCountry = createSelector(
+  (store: AppStateType) => store.search.choseCountryItem,
+  (choseCountryItem) => choseCountryItem,
+);

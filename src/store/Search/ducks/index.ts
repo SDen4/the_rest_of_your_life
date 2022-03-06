@@ -1,9 +1,12 @@
 export {
   searchRequestSaga,
+  birthDateSaga,
   searchAdd,
   choseSex,
   choseLang,
+  choseCountry,
   saveResult,
+  saveBirthDate,
   loading,
   form,
   result,

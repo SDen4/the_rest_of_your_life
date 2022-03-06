@@ -19,6 +19,7 @@ import {
   selectChosenSex,
   selectChosenLang,
   selectValueYears,
+  selectUserYears,
 } from '../../store/Search/selectors/selectors';
 
 import { form, result } from '../../store/Search/ducks';
@@ -29,21 +30,22 @@ import Button from '../../ui/Button';
 import WeeksTable from '../WeeksTable';
 
 import ResultText from './assets/ResultText';
-import { IResult, StateItemType, StateType } from './types';
+import { StateItemType, StateType } from './types';
 
 import styles from './Result.module.css';
 
-const Result: React.FC<IResult> = ({ store }) => {
+const Result: React.FC = () => {
   const dispatch = useDispatch();
 
   const sex: string = useSelector(selectChosenSex);
   const lang: string = useSelector(selectChosenLang);
   const valueYears: number = useSelector(selectValueYears);
+  const userYears: number = useSelector(selectUserYears);
 
   const height =
-    store.userYears < valueYears
+    userYears < valueYears
       ? `${valueYears * 7 - 1}px`
-      : `${store.userYears * 7 - 1}px`;
+      : `${userYears * 7 - 1}px`;
 
   const states: StateType = ['table', 'years', 'weeks', 'final'];
   const [show, setShow] = useState<StateItemType>(states[0]);
@@ -66,7 +68,7 @@ const Result: React.FC<IResult> = ({ store }) => {
 
   return (
     <div className={styles.resultWrapper}>
-      <ResultText store={store} />
+      <ResultText />
       <div
         className={clsx(
           styles.tableWrapper,
@@ -75,15 +77,15 @@ const Result: React.FC<IResult> = ({ store }) => {
         onClick={changeResultInfo}
       >
         {show === 'table' && (
-          <WeeksTable valueYears={valueYears} userYears={store.userYears} />
+          <WeeksTable valueYears={valueYears} userYears={userYears} />
         )}
 
         {show === 'years' && (
           <div className={styles.showInfoWrapper} style={{ height: height }}>
-            {store.userYears < valueYears ? (
+            {userYears < valueYears ? (
               <h2>
                 {resultYearsTextinTheTable[lang]}
-                <span>{inflection(valueYears - store.userYears, lang)}</span>
+                <span>{inflection(valueYears - userYears, lang)}</span>
                 {resultTextOr2[lang]}
               </h2>
             ) : (
@@ -94,7 +96,7 @@ const Result: React.FC<IResult> = ({ store }) => {
                 sex === formSexList.rus[2]
                   ? resultYearsTextInTheTableLuckyMan[lang]
                   : resultYearsTextInTheTableLuckyWooman[lang]}
-                <span>{inflection(store.userYears - valueYears, lang)}</span>
+                <span>{inflection(userYears - valueYears, lang)}</span>
               </h2>
             )}
           </div>
@@ -102,16 +104,16 @@ const Result: React.FC<IResult> = ({ store }) => {
 
         {show === 'weeks' && (
           <div className={styles.showInfoWrapper} style={{ height: height }}>
-            {store.userYears < valueYears ? (
+            {userYears < valueYears ? (
               <h2>
                 {resultTextOr[lang]}
-                <span>{((valueYears - store.userYears) * 52).toFixed()}</span>
+                <span>{((valueYears - userYears) * 52).toFixed()}</span>
                 {resultTextWeek[lang]}
               </h2>
             ) : (
               <h2>
                 {resultTextOr[lang]}
-                <span>{((store.userYears - valueYears) * 52).toFixed()}</span>
+                <span>{((userYears - valueYears) * 52).toFixed()}</span>
                 {resultTextWeek[lang]}
               </h2>
             )}
@@ -120,7 +122,7 @@ const Result: React.FC<IResult> = ({ store }) => {
 
         {show === 'final' && (
           <div className={styles.showInfoWrapper} style={{ height: height }}>
-            {store.userYears < valueYears ? (
+            {userYears < valueYears ? (
               <h2>{resultTextFinal[lang]}</h2>
             ) : (
               <h2>{resultTextFinalLucky[lang]}</h2>

@@ -15,28 +15,30 @@ import {
 import Button from '../../ui/Button';
 import Select from '../../ui/Select';
 
-import { searchRequestSaga } from '../../store/Search/ducks';
-
-import { choseCountry } from '../../store/MainReducer/ducks/duck';
-
-import { selectCountry } from '../../store/MainReducer/selectors/selectors';
 import {
   selectChosenSex,
   selectChosenLang,
+  selectCountriesList,
+  selectBirthDate,
+  selectCountry,
 } from '../../store/Search/selectors/selectors';
 
-import { choseSex } from '../../store/Search/ducks';
-import { choseBirthDate } from '../../store/MainReducer/actions';
-
-import { IForm } from './types';
+import {
+  choseSex,
+  birthDateSaga,
+  choseCountry,
+  searchRequestSaga,
+} from '../../store/Search/ducks';
 
 import styles from './Form.module.css';
 
-const Form: React.FC<IForm> = ({ store }) => {
+const Form: React.FC = () => {
   const dispatch = useDispatch();
 
   const sex: string = useSelector(selectChosenSex);
   const lang: string = useSelector(selectChosenLang);
+  const countriesList: string[] = useSelector(selectCountriesList);
+  const birthDate: Date = useSelector(selectBirthDate);
 
   const country = useSelector(selectCountry);
 
@@ -53,15 +55,15 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const [localBirthDate, setLocalBirthDate] = useState(
-    format(store.birthDate, 'yyyy-MM-dd'),
+    format(birthDate, 'yyyy-MM-dd'),
   );
 
   const choseNewBirthDate = (event: any) => {
     if (event.target.valueAsDate) {
-      dispatch(choseBirthDate(event.target.valueAsDate));
-    }
-    if (event.target.valueAsDate)
+      console.log(event.target.valueAsDate);
+      dispatch(birthDateSaga(event.target.valueAsDate));
       setLocalBirthDate(() => format(event.target.valueAsDate, 'yyyy-MM-dd'));
+    }
   };
 
   const calculateHandler = () => {
@@ -76,7 +78,7 @@ const Form: React.FC<IForm> = ({ store }) => {
         <div className={styles.formRow}>
           <Select
             onChange={choseNewCountry}
-            list={store.countriesList}
+            list={countriesList}
             currentValue={country}
             title={formNames[lang]}
           />

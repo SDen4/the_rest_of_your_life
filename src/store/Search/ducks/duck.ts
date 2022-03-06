@@ -4,17 +4,30 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 import { formSexList } from '../../../constants/form';
 import { appLang } from '../../../constants/app';
 
+import data from '../../../data/data.json';
+
+const dataCountriesList = Array.from(
+  new Set(data.fact.map((el) => el.dims.COUNTRY)),
+);
+
 const search = 'search';
 
 // Actions ==========================
 export const searchRequestSaga = createAction(`${search}/SEARCH_REQUEST`);
+export const birthDateSaga = createAction<Date>(`${search}/BIRTH_DATE`);
+
 export const searchAdd = createAction<string>(`${search}/SEARCH_ADD`);
+export const choseCountry = createAction<string>(`${search}/CHOSE_COUNTRY`);
 export const choseSex = createAction<string>(`${search}/CHOSE_SEX`);
 export const choseLang = createAction<string>(`${search}/CHOSE_LANG`);
 export const saveResult = createAction<{
   valueYears: number;
   statYear: number;
 }>(`${search}/SAVE_RESULT`);
+export const saveBirthDate = createAction<{
+  birthDate: Date;
+  userYears: number;
+}>(`${search}/SAVE_BIRTH`);
 
 export const loading = createAction<boolean>(`${search}/LOADING`);
 export const form = createAction<boolean>(`${search}/FORM_FLAG`);
@@ -24,6 +37,10 @@ export const result = createAction<boolean>(`${search}/RESULT_FLAG`);
 
 const searchItem = createReducer('', {
   [searchAdd.toString()]: (_state, action) => action.payload,
+});
+
+const choseCountryItem = createReducer(dataCountriesList[0], {
+  [choseCountry.toString()]: (_state, action) => action.payload,
 });
 
 const chosenSex = createReducer(formSexList.rus[0], {
@@ -44,6 +61,24 @@ const savedResult = createReducer(
   },
 );
 
+const savedBirthDate = createReducer(
+  {
+    birthDate: new Date(),
+    userYears: 0,
+  },
+  {
+    [saveBirthDate.toString()]: (_state, action) => action.payload,
+  },
+);
+
+const savedInitData = createReducer(
+  {
+    currentDate: new Date(),
+    countriesList: dataCountriesList,
+  },
+  {},
+);
+
 const loadingFlag = createReducer(false, {
   [loading.toString()]: (_state, action) => action.payload,
 });
@@ -60,8 +95,11 @@ const resultFlag = createReducer(false, {
 const searchRootReducer = combineReducers({
   searchItem,
   chosenSex,
+  choseCountryItem,
   chosenLang,
   savedResult,
+  savedBirthDate,
+  savedInitData,
   loadingFlag,
   formFlag,
   resultFlag,
