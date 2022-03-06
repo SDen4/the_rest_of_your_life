@@ -35,7 +35,7 @@ async function getData(countryName: string) {
   return response;
 }
 
-function* getSearchItem(action: any) {
+function* getSearchItem() {
   const country: string = yield select(selectCountry);
   const sex: string = yield select(selectChosenSex);
   const lang: string = yield select(selectChosenLang);

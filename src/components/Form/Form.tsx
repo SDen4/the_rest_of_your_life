@@ -65,7 +65,7 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const calculateHandler = () => {
-    dispatch(searchRequest({ sex: sex, lang: lang }));
+    dispatch(searchRequest());
   };
 
   return (

@@ -7,9 +7,7 @@ import { appLang } from '../../../constants/app';
 const search = 'search';
 
 // Actions ==========================
-export const searchRequest = createAction<{ sex: string; lang: string }>(
-  `${search}/SEARCH_REQUEST`,
-);
+export const searchRequest = createAction(`${search}/SEARCH_REQUEST`);
 export const searchAdd = createAction<string>(`${search}/SEARCH_ADD`);
 export const choseSex = createAction<string>(`${search}/CHOSE_SEX`);
 export const choseLang = createAction<string>(`${search}/CHOSE_LANG`);
