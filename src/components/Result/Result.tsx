@@ -15,12 +15,12 @@ import {
 } from '../../constants/result';
 import { formSexList } from '../../constants/form';
 
-import { openForm, openResult } from '../../store/MainReducer/actions';
-
 import {
   selectChosenSex,
   selectChosenLang,
 } from '../../store/Search/selectors/selectors';
+
+import { form, result } from '../../store/Search/ducks';
 
 import inflection from '../../utils/inflection';
 
@@ -47,8 +47,8 @@ const Result: React.FC<IResult> = ({ store }) => {
   const [show, setShow] = useState<StateItemType>(states[0]);
 
   const backHandler = () => {
-    dispatch(openResult(false));
-    dispatch(openForm(true));
+    dispatch(result(false));
+    dispatch(form(true));
   };
 
   const changeResultInfo = () => {

@@ -11,8 +11,6 @@ const dataCountriesList = Array.from(
 );
 
 const InitialState: InitialMainReducerType = {
-  formFlag: false,
-  resultFlag: false,
   countriesList: dataCountriesList,
   valueYears: 0,
   statYear: 0,
@@ -26,12 +24,6 @@ export const MainReducer = (
   action: ActionsType,
 ): typeof state => {
   switch (action.type) {
-    case CONST.OPEN_FORM:
-      return { ...state, formFlag: action.formFlag };
-
-    case CONST.OPEN_RESULT:
-      return { ...state, resultFlag: action.resultFlag };
-
     case CONST.SAVE_RESULT:
       return {
         ...state,

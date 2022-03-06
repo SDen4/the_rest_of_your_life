@@ -1,1 +1,10 @@
-export { searchRequest, searchAdd, default as searchRootReducer } from './duck';
+export {
+  searchRequest,
+  searchAdd,
+  loading,
+  choseSex,
+  choseLang,
+  form,
+  result,
+  default as searchRootReducer,
+} from './duck';

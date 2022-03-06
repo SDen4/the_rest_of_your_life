@@ -1,6 +1,6 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { searchAdd, searchRequest } from '../ducks';
+import { form, result, searchAdd, searchRequest } from '../ducks';
 
 import data from '../../../data/data.json';
 
@@ -13,9 +13,9 @@ import {
   selectChosenLang,
 } from '../../Search/selectors/selectors';
 
-import { openForm, openResult, saveResult } from '../../MainReducer/actions';
+import { saveResult } from '../../MainReducer/actions';
 
-import { loading } from '../ducks/duck';
+import { loading } from '../ducks';
 
 async function getData(countryName: string) {
   const params = new URLSearchParams();
@@ -84,8 +84,8 @@ function* getSearchItem(action: any) {
   const statYear = Number(totalData.dims.YEAR);
 
   yield put(saveResult(valueYears, statYear));
-  yield put(openForm(false));
-  yield put(openResult(true));
+  yield put({ type: form.toString(), payload: false });
+  yield put({ type: result.toString(), payload: true });
 
   if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
 }

@@ -7,11 +7,6 @@ export const selectSearchItem = createSelector(
   (searchItem) => searchItem,
 );
 
-export const selectLoadingFlag = createSelector(
-  (store: AppStateType) => store.search.loadingFlag,
-  (loadingFlag) => loadingFlag,
-);
-
 export const selectChosenSex = createSelector(
   (store: AppStateType) => store.search.chosenSex,
   (chosenSex) => chosenSex,
@@ -20,4 +15,19 @@ export const selectChosenSex = createSelector(
 export const selectChosenLang = createSelector(
   (store: AppStateType) => store.search.chosenLang,
   (chosenLang) => chosenLang,
+);
+
+export const selectLoadingFlag = createSelector(
+  (store: AppStateType) => store.search.loadingFlag,
+  (loadingFlag) => loadingFlag,
+);
+
+export const selectFormFlag = createSelector(
+  (store: AppStateType) => store.search.formFlag,
+  (formFlag) => formFlag,
+);
+
+export const selectResultFlag = createSelector(
+  (store: AppStateType) => store.search.resultFlag,
+  (resultFlag) => resultFlag,
 );

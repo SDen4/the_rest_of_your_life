@@ -1,6 +1,4 @@
 export type InitialMainReducerType = {
-  formFlag: boolean;
-  resultFlag: boolean;
   countriesList: string[];
   valueYears: number;
   statYear: number;

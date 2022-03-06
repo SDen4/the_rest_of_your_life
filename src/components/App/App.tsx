@@ -6,11 +6,13 @@ import { appLang } from '../../constants/app';
 import { AppStateType } from '../../store/RootReducer';
 import { InitialMainReducerType } from '../../store/MainReducer/types';
 
-import { choseLang } from '../../store/Search/ducks/duck';
+import { choseLang } from '../../store/Search/ducks';
 
 import {
   selectLoadingFlag,
   selectChosenLang,
+  selectFormFlag,
+  selectResultFlag,
 } from '../../store/Search/selectors/selectors';
 
 import Select from '../../ui/Select';
@@ -24,8 +26,10 @@ import styles from './App.module.css';
 function App() {
   const dispatch = useDispatch();
 
-  const loading: boolean = useSelector(selectLoadingFlag);
   const lang: string = useSelector(selectChosenLang);
+  const loading: boolean = useSelector(selectLoadingFlag);
+  const formFlag: boolean = useSelector(selectFormFlag);
+  const resultFlag: boolean = useSelector(selectResultFlag);
 
   const storeState = useSelector<AppStateType, InitialMainReducerType>(
     (store) => store.main,
@@ -63,17 +67,11 @@ function App() {
             />
           </header>
 
-          {!storeState.formFlag && !storeState.resultFlag && (
-            <Disclaimer lang={lang} />
-          )}
+          {!formFlag && !resultFlag && <Disclaimer lang={lang} />}
 
-          {storeState.formFlag && !storeState.resultFlag && (
-            <Form store={storeState} />
-          )}
+          {formFlag && !resultFlag && <Form store={storeState} />}
 
-          {!storeState.formFlag && storeState.resultFlag && (
-            <Result store={storeState} />
-          )}
+          {!formFlag && resultFlag && <Result store={storeState} />}
         </div>
       )}
     </>

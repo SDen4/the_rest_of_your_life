@@ -25,7 +25,7 @@ import {
   selectChosenLang,
 } from '../../store/Search/selectors/selectors';
 
-import { choseSex } from '../../store/Search/ducks/duck';
+import { choseSex } from '../../store/Search/ducks';
 import { choseBirthDate } from '../../store/MainReducer/actions';
 
 import { IForm } from './types';
