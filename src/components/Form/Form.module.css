@@ -48,6 +48,10 @@
   margin-right: 15px;
 }
 
+.dateWrapper input {
+  cursor: pointer;
+}
+
 @media (max-width: 650px) {
   .formWrapper {
     flex-direction: column;
