@@ -4,7 +4,9 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 const search = 'search';
 
 // Actions ==========================
-export const searchRequest = createAction<string>(`${search}/SEARCH_REQUEST`);
+export const searchRequest = createAction<{ sex: string; lang: string }>(
+  `${search}/SEARCH_REQUEST`,
+);
 export const searchAdd = createAction<string>(`${search}/SEARCH_ADD`);
 
 // Reducers ==========================

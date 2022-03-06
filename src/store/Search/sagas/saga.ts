@@ -28,7 +28,6 @@ async function getData(countryName: string) {
   const response = await API.post('translate', params, config).then(
     (res) => res.data,
   );
-  console.log(response);
   return response;
 }
 
@@ -36,18 +35,18 @@ function* getSearchItem(action: any) {
   const country: string = yield select(selectCountry);
   let finalCountry: string = yield country;
 
-  const translatedItem: {
-    data: { translatedText: string };
-    status: 'success' | 'error';
-  } = yield getData(country);
+  if (action.payload.lang === 'rus') {
+    const translatedItem: {
+      data: { translatedText: string };
+      status: 'success' | 'error';
+    } = yield getData(country);
 
-  yield console.log(translatedItem.data.translatedText);
-
-  if (
-    translatedItem.status === 'success' &&
-    translatedItem.data.translatedText
-  ) {
-    finalCountry = yield translatedItem.data.translatedText;
+    if (
+      translatedItem.status === 'success' &&
+      translatedItem.data.translatedText
+    ) {
+      finalCountry = yield translatedItem.data.translatedText;
+    }
   }
 
   yield put({
@@ -56,7 +55,7 @@ function* getSearchItem(action: any) {
   });
 
   // from Form
-  const curSex: string = yield action.payload;
+  const curSex: string = yield action.payload.sex;
   let currentSex: string = yield currentSexForSearch(curSex);
 
   // range of relevant data by years
