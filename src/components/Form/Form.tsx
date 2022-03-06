@@ -12,7 +12,6 @@ import {
   formTitle,
 } from '../../constants/form';
 
-import { choseBirthDate, choseSex } from '../../store/MainReducer/actions';
 import Button from '../../ui/Button';
 import Select from '../../ui/Select';
 
@@ -21,6 +20,13 @@ import { searchRequest } from '../../store/Search/ducks';
 import { choseCountry } from '../../store/MainReducer/ducks/duck';
 
 import { selectCountry } from '../../store/MainReducer/selectors/selectors';
+import {
+  selectChosenSex,
+  selectChosenLang,
+} from '../../store/Search/selectors/selectors';
+
+import { choseSex } from '../../store/Search/ducks/duck';
+import { choseBirthDate } from '../../store/MainReducer/actions';
 
 import { IForm } from './types';
 
@@ -28,6 +34,9 @@ import styles from './Form.module.css';
 
 const Form: React.FC<IForm> = ({ store }) => {
   const dispatch = useDispatch();
+
+  const sex: string = useSelector(selectChosenSex);
+  const lang: string = useSelector(selectChosenLang);
 
   const country = useSelector(selectCountry);
 
@@ -56,12 +65,12 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const calculateHandler = () => {
-    dispatch(searchRequest({ sex: store.chosenSex, lang: store.currentLang }));
+    dispatch(searchRequest({ sex: sex, lang: lang }));
   };
 
   return (
     <div className={styles.formComponent}>
-      <h2 className={styles.subTitle}>{formTitle[store.currentLang]}</h2>
+      <h2 className={styles.subTitle}>{formTitle[lang]}</h2>
 
       <form className={styles.formWrapper}>
         <div className={styles.formRow}>
@@ -69,21 +78,21 @@ const Form: React.FC<IForm> = ({ store }) => {
             onChange={choseNewCountry}
             list={store.countriesList}
             currentValue={country}
-            title={formNames[store.currentLang]}
+            title={formNames[lang]}
           />
         </div>
 
         <div className={styles.formRow}>
           <Select
             onChange={choseNewSex}
-            list={formSexList[store.currentLang]}
-            currentValue={store.chosenSex}
-            title={formSex[store.currentLang]}
+            list={formSexList[lang]}
+            currentValue={sex}
+            title={formSex[lang]}
           />
         </div>
 
         <div className={clsx(styles.formRow, styles.dateWrapper)}>
-          <label>{formDate[store.currentLang]}</label>
+          <label>{formDate[lang]}</label>
           <input
             type="date"
             onChange={choseNewBirthDate}
@@ -93,7 +102,7 @@ const Form: React.FC<IForm> = ({ store }) => {
       </form>
 
       <Button
-        buttonText={formButton[store.currentLang]}
+        buttonText={formButton[lang]}
         buttonOnClickHandler={calculateHandler}
       />
     </div>

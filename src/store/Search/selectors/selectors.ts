@@ -11,3 +11,13 @@ export const selectLoadingFlag = createSelector(
   (store: AppStateType) => store.search.loadingFlag,
   (loadingFlag) => loadingFlag,
 );
+
+export const selectChosenSex = createSelector(
+  (store: AppStateType) => store.search.chosenSex,
+  (chosenSex) => chosenSex,
+);
+
+export const selectChosenLang = createSelector(
+  (store: AppStateType) => store.search.chosenLang,
+  (chosenLang) => chosenLang,
+);

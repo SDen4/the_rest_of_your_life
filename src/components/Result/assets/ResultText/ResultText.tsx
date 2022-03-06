@@ -23,56 +23,50 @@ import { IResultText } from './types';
 
 import styles from './ResultText.module.css';
 import inflection from '../../../../utils/inflection';
-import { selectSearchItem } from '../../../../store/Search/selectors/selectors';
+import {
+  selectSearchItem,
+  selectChosenSex,
+  selectChosenLang,
+} from '../../../../store/Search/selectors/selectors';
 
 const ResultText: React.FC<IResultText> = ({ store }) => {
   const country: string = useSelector(selectSearchItem);
+  const sex: string = useSelector(selectChosenSex);
+  const lang: string = useSelector(selectChosenLang);
 
   return (
     <h2>
-      {resultIn[store.currentLang]} {country} {resultText1[store.currentLang]}{' '}
-      {store.chosenSex === formSexList.rus[0] ||
-      store.chosenSex === formSexList.eng[0]
-        ? resultTextMan[store.currentLang]
+      {resultIn[lang]} {country} {resultText1[lang]}{' '}
+      {sex === formSexList.rus[0] || sex === formSexList.eng[0]
+        ? resultTextMan[lang]
         : ''}
-      {store.chosenSex === formSexList.rus[1] ||
-      store.chosenSex === formSexList.eng[1]
-        ? resultTextWoman[store.currentLang]
+      {sex === formSexList.rus[1] || sex === formSexList.eng[1]
+        ? resultTextWoman[lang]
         : ''}
-      {store.chosenSex === formSexList.eng[2] ||
-      store.chosenSex === formSexList.rus[2]
-        ? ''
-        : ''}{' '}
-      {resultTextIs[store.currentLang]}{' '}
-      <span className={styles.color}>
-        {inflection(store.valueYears, store.currentLang)}
-      </span>
+      {sex === formSexList.eng[2] || sex === formSexList.rus[2] ? '' : ''}{' '}
+      {resultTextIs[lang]}{' '}
+      <span className={styles.color}>{inflection(store.valueYears, lang)}</span>
       .
       <br />
-      {resultTextData[store.currentLang]} {resultTextWho[store.currentLang]}{' '}
-      {resultTextFor[store.currentLang]} {store.statYear}{' '}
-      {resultTextYearRus[store.currentLang]}.
+      {resultTextData[lang]} {resultTextWho[lang]} {resultTextFor[lang]}{' '}
+      {store.statYear} {resultTextYearRus[lang]}.
       <br />
-      {store.userYears > store.valueYears &&
-        resultTextLucky[store.currentLang]}{' '}
-      {store.chosenSex === formSexList.rus[0] ||
-      store.chosenSex === formSexList.eng[0] ||
-      store.chosenSex === formSexList.eng[2] ||
-      store.chosenSex === formSexList.rus[2]
-        ? resultTextLivedMan[store.currentLang]
+      {store.userYears > store.valueYears && resultTextLucky[lang]}{' '}
+      {sex === formSexList.rus[0] ||
+      sex === formSexList.eng[0] ||
+      sex === formSexList.eng[2] ||
+      sex === formSexList.rus[2]
+        ? resultTextLivedMan[lang]
         : ''}{' '}
-      {store.chosenSex === formSexList.rus[1] ||
-      store.chosenSex === formSexList.eng[1]
-        ? resultTextLivedWoman[store.currentLang]
+      {sex === formSexList.rus[1] || sex === formSexList.eng[1]
+        ? resultTextLivedWoman[lang]
         : ''}{' '}
-      <span className={styles.color}>
-        {inflection(store.userYears, store.currentLang)}
-      </span>
-      , {resultTextCons[store.currentLang]}{' '}
+      <span className={styles.color}>{inflection(store.userYears, lang)}</span>,{' '}
+      {resultTextCons[lang]}{' '}
       <span className={styles.color}>
         {((store.userYears / store.valueYears) * 100).toFixed(1)}%
       </span>{' '}
-      {resultTextAfterPers[store.currentLang]}.
+      {resultTextAfterPers[lang]}.
     </h2>
   );
 };

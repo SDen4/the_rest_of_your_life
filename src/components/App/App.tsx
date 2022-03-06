@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { appLang } from '../../constants/app';
 
-import { choseLang } from '../../store/MainReducer/actions';
-
 import { AppStateType } from '../../store/RootReducer';
 import { InitialMainReducerType } from '../../store/MainReducer/types';
 
-import { selectLoadingFlag } from '../../store/Search/selectors/selectors';
+import { choseLang } from '../../store/Search/ducks/duck';
+
+import {
+  selectLoadingFlag,
+  selectChosenLang,
+} from '../../store/Search/selectors/selectors';
 
 import Select from '../../ui/Select';
 import Disclaimer from '../Disclaimer';
@@ -22,6 +25,7 @@ function App() {
   const dispatch = useDispatch();
 
   const loading: boolean = useSelector(selectLoadingFlag);
+  const lang: string = useSelector(selectChosenLang);
 
   const storeState = useSelector<AppStateType, InitialMainReducerType>(
     (store) => store.main,
@@ -29,7 +33,13 @@ function App() {
 
   const changeLang = (event: any) => {
     if (event.target.value) {
-      dispatch(choseLang(event.target.value));
+      dispatch(
+        choseLang(
+          event.target.value === 'Eng'
+            ? Object.keys(appLang)[1]
+            : Object.keys(appLang)[0],
+        ),
+      );
     }
   };
 
@@ -46,7 +56,7 @@ function App() {
               onChange={changeLang}
               list={Object.values(appLang)}
               currentValue={
-                storeState.currentLang === 'eng'
+                lang === 'eng'
                   ? Object.values(appLang)[1]
                   : Object.values(appLang)[0]
               }
@@ -54,7 +64,7 @@ function App() {
           </header>
 
           {!storeState.formFlag && !storeState.resultFlag && (
-            <Disclaimer lang={storeState.currentLang} />
+            <Disclaimer lang={lang} />
           )}
 
           {storeState.formFlag && !storeState.resultFlag && (

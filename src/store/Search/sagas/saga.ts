@@ -8,6 +8,10 @@ import { API } from '../../../utils/api';
 import currentSexForSearch from '../../../utils/currentSexForSearch';
 
 import { selectCountry } from '../../MainReducer/selectors/selectors';
+import {
+  selectChosenSex,
+  selectChosenLang,
+} from '../../Search/selectors/selectors';
 
 import { openForm, openResult, saveResult } from '../../MainReducer/actions';
 
@@ -35,9 +39,12 @@ async function getData(countryName: string) {
 
 function* getSearchItem(action: any) {
   const country: string = yield select(selectCountry);
+  const sex: string = yield select(selectChosenSex);
+  const lang: string = yield select(selectChosenLang);
+
   let finalCountry: string = yield country;
 
-  if (action.payload.lang === 'rus') {
+  if (lang === 'rus') {
     yield put({ type: loading.toString(), payload: true });
     const translatedItem: {
       data: { translatedText: string };
@@ -58,8 +65,7 @@ function* getSearchItem(action: any) {
   });
 
   // from Form
-  const curSex: string = yield action.payload.sex;
-  let currentSex: string = yield currentSexForSearch(curSex);
+  let currentSex: string = yield currentSexForSearch(sex);
 
   // range of relevant data by years
   const relevantRange = data.fact.filter(
@@ -80,7 +86,8 @@ function* getSearchItem(action: any) {
   yield put(saveResult(valueYears, statYear));
   yield put(openForm(false));
   yield put(openResult(true));
-  yield put({ type: loading.toString(), payload: false });
+
+  if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
 }
 
 export function* rootSearchSaga() {
