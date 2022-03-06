@@ -40,8 +40,6 @@ function App() {
     }
   };
 
-  console.log('App render');
-
   return (
     <>
       {loading ? (
