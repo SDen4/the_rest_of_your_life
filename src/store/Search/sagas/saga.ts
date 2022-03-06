@@ -27,7 +27,7 @@ async function getData(countryName: string) {
   const params = new URLSearchParams();
   params.append('source_language', 'en');
   params.append('target_language', 'ru');
-  params.append('text', countryName);
+  params.append('text', `In ${countryName}`);
 
   const config = {
     headers: {
@@ -48,7 +48,7 @@ function* getSearchItem() {
   const sex: string = yield select(selectChosenSex);
   const lang: string = yield select(selectChosenLang);
 
-  let finalCountry: string = yield country;
+  let finalCountry: string = yield `In ${country}`;
 
   if (lang === 'rus') {
     yield put({ type: loading.toString(), payload: true });
@@ -98,8 +98,6 @@ function* getSearchItem() {
 
 function* getBirthDate(action: any) {
   const birthDate: Date = yield action.payload;
-
-  console.log(birthDate);
 
   const end: Date = yield select(selectCurrentDate);
   const start: Date = yield birthDate;

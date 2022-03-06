@@ -3,11 +3,6 @@ export const resultButton: any = {
   eng: 'Back',
 };
 
-export const resultIn: any = {
-  rus: 'В',
-  eng: 'In',
-};
-
 export const resultText1: any = {
   rus: 'средняя продолжительность жизни',
   eng: 'the average life expectancy',

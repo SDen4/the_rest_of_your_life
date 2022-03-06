@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { formSexList } from '../../../../constants/form';
 
 import {
-  resultIn,
   resultText1,
   resultTextAfterPers,
   resultTextCons,
@@ -40,7 +39,7 @@ const ResultText: React.FC = () => {
 
   return (
     <h2>
-      {resultIn[lang]} {country} {resultText1[lang]}{' '}
+      {country} {resultText1[lang]}{' '}
       {sex === formSexList.rus[0] || sex === formSexList.eng[0]
         ? resultTextMan[lang]
         : ''}
