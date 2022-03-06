@@ -23,6 +23,8 @@ import {
 
 import { loading, birthDateSaga } from '../ducks';
 
+import { getBirthDateSagaType, translatedItemType } from '../types/typesSearch';
+
 async function getData(countryName: string) {
   const params = new URLSearchParams();
   params.append('source_language', 'en');
@@ -53,10 +55,7 @@ function* getSearchItem() {
   if (lang === 'rus') {
     yield put({ type: loading.toString(), payload: true });
 
-    const translatedItem: {
-      data: { translatedText: string };
-      status: 'success' | 'error';
-    } = yield getData(country);
+    const translatedItem: translatedItemType = yield getData(country);
 
     if (
       translatedItem.status === 'success' &&
@@ -99,7 +98,7 @@ function* getSearchItem() {
   if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
 }
 
-function* getBirthDate(action: any) {
+function* getBirthDate(action: getBirthDateSagaType) {
   const birthDate: Date = yield action.payload;
 
   const end: Date = yield select(selectCurrentDate);

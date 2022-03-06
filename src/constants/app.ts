@@ -1,1 +1,3 @@
-export const appLang = { rus: 'Рус', eng: 'Eng' };
+export type constType = { [key: string]: string };
+
+export const appLang: constType = { rus: 'Рус', eng: 'Eng' };

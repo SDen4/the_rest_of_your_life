@@ -42,13 +42,13 @@ const Form: React.FC = () => {
 
   const country = useSelector(selectCountry);
 
-  const choseNewCountry = (event: any) => {
+  const choseNewCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value) {
       dispatch(choseCountry(event.target.value));
     }
   };
 
-  const choseNewSex = (event: any) => {
+  const choseNewSex = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value) {
       dispatch(choseSex(event.target.value));
     }

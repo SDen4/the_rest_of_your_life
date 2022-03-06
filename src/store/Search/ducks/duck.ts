@@ -4,6 +4,8 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 import { formSexList } from '../../../constants/form';
 import { appLang } from '../../../constants/app';
 
+import { saveBirthDateType, saveResultType } from '../types/typesSearch';
+
 import data from '../../../data/data.json';
 
 const dataCountriesList = Array.from(
@@ -20,14 +22,10 @@ export const searchAdd = createAction<string>(`${main}/SEARCH_ADD`);
 export const choseCountry = createAction<string>(`${main}/CHOSE_COUNTRY`);
 export const choseSex = createAction<string>(`${main}/CHOSE_SEX`);
 export const choseLang = createAction<string>(`${main}/CHOSE_LANG`);
-export const saveResult = createAction<{
-  valueYears: number;
-  statYear: number;
-}>(`${main}/SAVE_RESULT`);
-export const saveBirthDate = createAction<{
-  birthDate: Date;
-  userYears: number;
-}>(`${main}/SAVE_BIRTH`);
+export const saveResult = createAction<saveResultType>(`${main}/SAVE_RESULT`);
+export const saveBirthDate = createAction<saveBirthDateType>(
+  `${main}/SAVE_BIRTH`,
+);
 
 export const loading = createAction<boolean>(`${main}/LOADING`);
 export const form = createAction<boolean>(`${main}/FORM_FLAG`);

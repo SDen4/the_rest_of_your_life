@@ -1,109 +1,111 @@
-export const resultButton: any = {
+export type constType = { [key: string]: string };
+
+export const resultButton: constType = {
   rus: 'Назад',
   eng: 'Back',
 };
 
-export const resultText1: any = {
+export const resultText1: constType = {
   rus: 'средняя продолжительность жизни',
   eng: 'the average life expectancy',
 };
 
-export const resultTextMan: any = {
+export const resultTextMan: constType = {
   rus: 'у мужчин',
   eng: 'for men',
 };
 
-export const resultTextWoman: any = {
+export const resultTextWoman: constType = {
   rus: 'у женщин',
   eng: 'for women',
 };
 
-export const resultTextIs: any = {
+export const resultTextIs: constType = {
   rus: 'составляет',
   eng: 'is',
 };
 
-export const resultTextData: any = {
+export const resultTextData: constType = {
   rus: 'Это данные',
   eng: 'This is',
 };
 
-export const resultTextYearRus: any = {
+export const resultTextYearRus: constType = {
   rus: 'год',
   eng: '',
 };
 
-export const resultTextWho: any = {
+export const resultTextWho: constType = {
   rus: 'ВОЗ',
   eng: 'the WHO data',
 };
 
-export const resultTextFor: any = {
+export const resultTextFor: constType = {
   rus: 'за',
   eng: 'for',
 };
 
-export const resultTextLivedMan: any = {
+export const resultTextLivedMan: constType = {
   rus: 'Ты прожил',
   eng: "You've lived for",
 };
 
-export const resultTextLivedWoman: any = {
+export const resultTextLivedWoman: constType = {
   rus: 'Ты прожила',
   eng: 'You have lived for',
 };
 
-export const resultTextCons: any = {
+export const resultTextCons: constType = {
   rus: 'что составляет',
   eng: 'which is',
 };
 
-export const resultTextAfterPers: any = {
+export const resultTextAfterPers: constType = {
   rus: 'от среднего срока жизни указанной тобой страны',
   eng: 'of the average life of the country you specified',
 };
 
-export const resultTextLucky: any = {
+export const resultTextLucky: constType = {
   rus: 'Похоже, тебе очень повезло.',
   eng: "It seems you're lucky.",
 };
 
-export const resultYearsTextinTheTable: any = {
+export const resultYearsTextinTheTable: constType = {
   rus: 'Тебе осталось прожить еще примерно',
   eng: 'You have about',
 };
 
-export const resultYearsTextInTheTableLuckyMan: any = {
+export const resultYearsTextInTheTableLuckyMan: constType = {
   rus: 'Ты - счастливчик! Ты прожил больше среднего на',
   eng: 'You are lucky! You lived more than average by',
 };
 
-export const resultYearsTextInTheTableLuckyWooman: any = {
+export const resultYearsTextInTheTableLuckyWooman: constType = {
   rus: 'А ты счастливая! Ты прожила больше среднего на',
   eng: 'You are lucky! You lived more than average by',
 };
 
-export const resultTextOr: any = {
+export const resultTextOr: constType = {
   rus: '... или',
   eng: '... or',
 };
 
-export const resultTextOr2: any = {
+export const resultTextOr2: constType = {
   rus: ', или...',
   eng: ', or...',
 };
 
-export const resultTextWeek: any = {
+export const resultTextWeek: constType = {
   rus: 'недель.',
   eng: 'weeks.',
 };
 
-export const resultTextFinal: any = {
+export const resultTextFinal: constType = {
   rus: 'Цени свою жизнь!',
   eng: 'Appreciate your life!',
 };
 
-export const resultTextFinalLucky: any = {
+export const resultTextFinalLucky: constType = {
   rus: 'Не останавливайся на достигнутом!',
   eng: "Don't stop there!",
 };
