@@ -14,13 +14,6 @@ export const openResult = (resultFlag: boolean) => {
   } as const;
 };
 
-// export const choseCountry = (chosenCountry: string) => {
-//   return {
-//     type: CONST.CHOSE_COUNTRY,
-//     chosenCountry,
-//   } as const;
-// };
-
 export const choseSex = (chosenSex: string) => {
   return {
     type: CONST.CHOSE_SEX,
@@ -52,7 +45,6 @@ export const choseLang = (chosenLang: string) => {
 
 type openFormType = ReturnType<typeof openForm>;
 type openResultType = ReturnType<typeof openResult>;
-// type choseCountryType = ReturnType<typeof choseCountry>;
 type choseSexType = ReturnType<typeof choseSex>;
 type saveResultType = ReturnType<typeof saveResult>;
 type choseBirthDateType = ReturnType<typeof choseBirthDate>;
@@ -61,7 +53,6 @@ type choseLangType = ReturnType<typeof choseLang>;
 export type ActionsType =
   | openFormType
   | openResultType
-  // | choseCountryType
   | choseSexType
   | saveResultType
   | choseBirthDateType
