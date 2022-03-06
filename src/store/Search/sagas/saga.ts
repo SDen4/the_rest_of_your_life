@@ -1,4 +1,4 @@
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { all, put, select, takeEvery } from 'redux-saga/effects';
 
 import {
   form,
@@ -52,6 +52,7 @@ function* getSearchItem() {
 
   if (lang === 'rus') {
     yield put({ type: loading.toString(), payload: true });
+
     const translatedItem: {
       data: { translatedText: string };
       status: 'success' | 'error';
@@ -89,9 +90,11 @@ function* getSearchItem() {
   const valueYears = Number(totalData.Value);
   const statYear = Number(totalData.dims.YEAR);
 
-  yield put({ type: saveResult.toString(), payload: { valueYears, statYear } });
-  yield put({ type: form.toString(), payload: false });
-  yield put({ type: result.toString(), payload: true });
+  yield all([
+    put({ type: saveResult.toString(), payload: { valueYears, statYear } }),
+    put({ type: form.toString(), payload: false }),
+    put({ type: result.toString(), payload: true }),
+  ]);
 
   if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
 }

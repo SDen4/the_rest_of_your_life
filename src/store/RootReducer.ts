@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import { searchRootReducer } from './Search/ducks';
+import { mainRootReducer } from './Search/ducks';
 
 export const RootReducer = combineReducers({
-  search: searchRootReducer,
+  main: mainRootReducer,
 });
 
 export type AppStateType = ReturnType<typeof RootReducer>;

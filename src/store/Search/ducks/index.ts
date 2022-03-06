@@ -10,5 +10,5 @@ export {
   loading,
   form,
   result,
-  default as searchRootReducer,
+  default as mainRootReducer,
 } from './duck';

@@ -10,31 +10,30 @@ const dataCountriesList = Array.from(
   new Set(data.fact.map((el) => el.dims.COUNTRY)),
 );
 
-const search = 'search';
+const main = 'main';
 
 // Actions ==========================
-export const searchRequestSaga = createAction(`${search}/SEARCH_REQUEST`);
-export const birthDateSaga = createAction<Date>(`${search}/BIRTH_DATE`);
+export const searchRequestSaga = createAction(`${main}/SEARCH_REQUEST`);
+export const birthDateSaga = createAction<Date>(`${main}/BIRTH_DATE`);
 
-export const searchAdd = createAction<string>(`${search}/SEARCH_ADD`);
-export const choseCountry = createAction<string>(`${search}/CHOSE_COUNTRY`);
-export const choseSex = createAction<string>(`${search}/CHOSE_SEX`);
-export const choseLang = createAction<string>(`${search}/CHOSE_LANG`);
+export const searchAdd = createAction<string>(`${main}/SEARCH_ADD`);
+export const choseCountry = createAction<string>(`${main}/CHOSE_COUNTRY`);
+export const choseSex = createAction<string>(`${main}/CHOSE_SEX`);
+export const choseLang = createAction<string>(`${main}/CHOSE_LANG`);
 export const saveResult = createAction<{
   valueYears: number;
   statYear: number;
-}>(`${search}/SAVE_RESULT`);
+}>(`${main}/SAVE_RESULT`);
 export const saveBirthDate = createAction<{
   birthDate: Date;
   userYears: number;
-}>(`${search}/SAVE_BIRTH`);
+}>(`${main}/SAVE_BIRTH`);
 
-export const loading = createAction<boolean>(`${search}/LOADING`);
-export const form = createAction<boolean>(`${search}/FORM_FLAG`);
-export const result = createAction<boolean>(`${search}/RESULT_FLAG`);
+export const loading = createAction<boolean>(`${main}/LOADING`);
+export const form = createAction<boolean>(`${main}/FORM_FLAG`);
+export const result = createAction<boolean>(`${main}/RESULT_FLAG`);
 
 // Reducers ==========================
-
 const searchItem = createReducer('', {
   [searchAdd.toString()]: (_state, action) => action.payload,
 });
@@ -92,7 +91,7 @@ const resultFlag = createReducer(false, {
 });
 
 // Root Reducer
-const searchRootReducer = combineReducers({
+const mainRootReducer = combineReducers({
   searchItem,
   chosenSex,
   choseCountryItem,
@@ -105,4 +104,4 @@ const searchRootReducer = combineReducers({
   resultFlag,
 });
 
-export default searchRootReducer;
+export default mainRootReducer;
