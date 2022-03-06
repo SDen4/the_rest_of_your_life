@@ -1,5 +1,5 @@
 export {
-  searchRequest,
+  searchRequestSaga,
   searchAdd,
   choseSex,
   choseLang,

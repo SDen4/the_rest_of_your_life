@@ -15,7 +15,7 @@ import {
 import Button from '../../ui/Button';
 import Select from '../../ui/Select';
 
-import { searchRequest } from '../../store/Search/ducks';
+import { searchRequestSaga } from '../../store/Search/ducks';
 
 import { choseCountry } from '../../store/MainReducer/ducks/duck';
 
@@ -65,7 +65,7 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const calculateHandler = () => {
-    dispatch(searchRequest());
+    dispatch(searchRequestSaga());
   };
 
   return (

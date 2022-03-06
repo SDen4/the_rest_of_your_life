@@ -1,6 +1,12 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { form, result, saveResult, searchAdd, searchRequest } from '../ducks';
+import {
+  form,
+  result,
+  saveResult,
+  searchAdd,
+  searchRequestSaga,
+} from '../ducks';
 
 import data from '../../../data/data.json';
 
@@ -89,5 +95,5 @@ function* getSearchItem() {
 }
 
 export function* rootSearchSaga() {
-  yield takeEvery(searchRequest, getSearchItem);
+  yield takeEvery(searchRequestSaga, getSearchItem);
 }
