@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
 import clsx from 'clsx';
 
@@ -12,19 +12,15 @@ import {
   formTitle,
 } from '../../constants/form';
 
-import data from '../../data/data.json';
-
-import {
-  choseBirthDate,
-  choseCountry,
-  choseSex,
-  openForm,
-  openResult,
-  saveResult,
-} from '../../store/MainReducer/actions';
+import { choseBirthDate, choseSex } from '../../store/MainReducer/actions';
 import Button from '../../ui/Button';
 import Select from '../../ui/Select';
-import currentSexForSearch from '../../utils/currentSexForSearch';
+
+import { searchRequest } from '../../store/Search/ducks';
+
+import { choseCountry } from '../../store/MainReducer/ducks/duck';
+
+import { selectCountry } from '../../store/MainReducer/selectors/selectors';
 
 import { IForm } from './types';
 
@@ -32,6 +28,8 @@ import styles from './Form.module.css';
 
 const Form: React.FC<IForm> = ({ store }) => {
   const dispatch = useDispatch();
+
+  const country = useSelector(selectCountry);
 
   const choseNewCountry = (event: any) => {
     if (event.target.value) {
@@ -58,27 +56,7 @@ const Form: React.FC<IForm> = ({ store }) => {
   };
 
   const calculateHandler = () => {
-    let currentSex = currentSexForSearch(store.chosenSex);
-
-    // range of relevant data by years
-    const releventRange = data.fact.filter(
-      (el) =>
-        el.dims.COUNTRY === store.chosenCountry &&
-        el.dims.SEX === currentSex &&
-        el.dims.GHO === 'Life expectancy at birth (years)',
-    );
-
-    // find the data for the latest year of the range
-    const totalData = releventRange.sort((a, b) =>
-      a.dims.YEAR > b.dims.YEAR ? -1 : 1,
-    )[0];
-
-    const valueYears = Number(totalData.Value);
-    const statYear = Number(totalData.dims.YEAR);
-
-    dispatch(saveResult(valueYears, statYear));
-    dispatch(openForm(false));
-    dispatch(openResult(true));
+    dispatch(searchRequest(store.chosenSex));
   };
 
   return (
@@ -90,7 +68,7 @@ const Form: React.FC<IForm> = ({ store }) => {
           <Select
             onChange={choseNewCountry}
             list={store.countriesList}
-            currentValue={store.chosenCountry}
+            currentValue={country}
             title={formNames[store.currentLang]}
           />
         </div>

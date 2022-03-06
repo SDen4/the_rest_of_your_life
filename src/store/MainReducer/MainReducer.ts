@@ -16,7 +16,7 @@ const InitialState: InitialMainReducerType = {
   formFlag: false,
   resultFlag: false,
   countriesList: dataCountriesList,
-  chosenCountry: dataCountriesList[0],
+  // chosenCountry: dataCountriesList[0],
   chosenSex: formSexList.rus[0],
   valueYears: 0,
   statYear: 0,
@@ -37,8 +37,8 @@ export const MainReducer = (
     case CONST.OPEN_RESULT:
       return { ...state, resultFlag: action.resultFlag };
 
-    case CONST.CHOSE_COUNTRY:
-      return { ...state, chosenCountry: action.chosenCountry };
+    // case CONST.CHOSE_COUNTRY:
+    //   return { ...state, chosenCountry: action.chosenCountry };
 
     case CONST.CHOSE_SEX:
       return { ...state, chosenSex: action.chosenSex };

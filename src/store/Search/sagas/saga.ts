@@ -1,8 +1,15 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { searchAdd, searchRequest } from '../ducks';
 
+import data from '../../../data/data.json';
+
 import { API } from '../../../utils/api';
+import currentSexForSearch from '../../../utils/currentSexForSearch';
+
+import { selectCountry } from '../../MainReducer/selectors/selectors';
+
+import { openForm, openResult, saveResult } from '../../MainReducer/actions';
 
 async function getData(countryName: string) {
   const params = new URLSearchParams();
@@ -26,16 +33,51 @@ async function getData(countryName: string) {
 }
 
 function* getSearchItem(action: any) {
-  yield console.log(action);
+  const country: string = yield select(selectCountry);
+  let finalCountry: string = yield country;
 
-  const translatedItem: string = yield getData(action.payload);
+  const translatedItem: {
+    data: { translatedText: string };
+    status: 'success' | 'error';
+  } = yield getData(country);
 
-  yield console.log(translatedItem);
+  yield console.log(translatedItem.data.translatedText);
+
+  if (
+    translatedItem.status === 'success' &&
+    translatedItem.data.translatedText
+  ) {
+    finalCountry = yield translatedItem.data.translatedText;
+  }
 
   yield put({
     type: searchAdd.toString(),
-    payload: translatedItem,
+    payload: finalCountry,
   });
+
+  // from Form
+  const curSex: string = yield action.payload;
+  let currentSex: string = yield currentSexForSearch(curSex);
+
+  // range of relevant data by years
+  const relevantRange = data.fact.filter(
+    (el) =>
+      el.dims.COUNTRY === country &&
+      el.dims.SEX === currentSex &&
+      el.dims.GHO === 'Life expectancy at birth (years)',
+  );
+
+  // find the data for the latest year of the range
+  const totalData = relevantRange.sort((a, b) =>
+    a.dims.YEAR > b.dims.YEAR ? -1 : 1,
+  )[0];
+
+  const valueYears = Number(totalData.Value);
+  const statYear = Number(totalData.dims.YEAR);
+
+  yield put(saveResult(valueYears, statYear));
+  yield put(openForm(false));
+  yield put(openResult(true));
 }
 
 export function* rootSearchSaga() {

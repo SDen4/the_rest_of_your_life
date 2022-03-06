@@ -10,7 +10,7 @@ export const searchAdd = createAction<string>(`${search}/SEARCH_ADD`);
 // Reducers ==========================
 
 const searchItem = createReducer('', {
-  [searchAdd.toString()]: (_state, action) => action.payload.searchItem,
+  [searchAdd.toString()]: (_state, action) => action.payload,
 });
 
 // Root Reducer

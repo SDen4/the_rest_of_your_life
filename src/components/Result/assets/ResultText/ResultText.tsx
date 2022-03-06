@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { formSexList } from '../../../../constants/form';
 
 import {
@@ -22,12 +23,14 @@ import { IResultText } from './types';
 
 import styles from './ResultText.module.css';
 import inflection from '../../../../utils/inflection';
+import { selectSearchItem } from '../../../../store/Search/selectors/selectors';
 
 const ResultText: React.FC<IResultText> = ({ store }) => {
+  const country: string = useSelector(selectSearchItem);
+
   return (
     <h2>
-      {resultIn[store.currentLang]} {store.chosenCountry}{' '}
-      {resultText1[store.currentLang]}{' '}
+      {resultIn[store.currentLang]} {country} {resultText1[store.currentLang]}{' '}
       {store.chosenSex === formSexList.rus[0] ||
       store.chosenSex === formSexList.eng[0]
         ? resultTextMan[store.currentLang]
