@@ -12,8 +12,6 @@ const dataCountriesList = Array.from(
 
 const InitialState: InitialMainReducerType = {
   countriesList: dataCountriesList,
-  valueYears: 0,
-  statYear: 0,
   currentDate: new Date(),
   birthDate: new Date(),
   userYears: 0,
@@ -24,13 +22,6 @@ export const MainReducer = (
   action: ActionsType,
 ): typeof state => {
   switch (action.type) {
-    case CONST.SAVE_RESULT:
-      return {
-        ...state,
-        valueYears: action.valueYears,
-        statYear: action.statYear,
-      };
-
     case CONST.CHOSE_BIRTH_DATE:
       const end = state.currentDate.getTime();
       const start = action.birthDate.getTime();

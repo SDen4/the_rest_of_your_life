@@ -1,9 +1,10 @@
 export {
   searchRequest,
   searchAdd,
-  loading,
   choseSex,
   choseLang,
+  saveResult,
+  loading,
   form,
   result,
   default as searchRootReducer,

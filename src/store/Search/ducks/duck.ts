@@ -13,6 +13,10 @@ export const searchRequest = createAction<{ sex: string; lang: string }>(
 export const searchAdd = createAction<string>(`${search}/SEARCH_ADD`);
 export const choseSex = createAction<string>(`${search}/CHOSE_SEX`);
 export const choseLang = createAction<string>(`${search}/CHOSE_LANG`);
+export const saveResult = createAction<{
+  valueYears: number;
+  statYear: number;
+}>(`${search}/SAVE_RESULT`);
 
 export const loading = createAction<boolean>(`${search}/LOADING`);
 export const form = createAction<boolean>(`${search}/FORM_FLAG`);
@@ -32,6 +36,16 @@ const chosenLang = createReducer(Object.keys(appLang)[0], {
   [choseLang.toString()]: (_state, action) => action.payload,
 });
 
+const savedResult = createReducer(
+  {
+    valueYears: 0,
+    statYear: 0,
+  },
+  {
+    [saveResult.toString()]: (_state, action) => action.payload,
+  },
+);
+
 const loadingFlag = createReducer(false, {
   [loading.toString()]: (_state, action) => action.payload,
 });
@@ -49,6 +63,7 @@ const searchRootReducer = combineReducers({
   searchItem,
   chosenSex,
   chosenLang,
+  savedResult,
   loadingFlag,
   formFlag,
   resultFlag,

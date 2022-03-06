@@ -31,3 +31,13 @@ export const selectResultFlag = createSelector(
   (store: AppStateType) => store.search.resultFlag,
   (resultFlag) => resultFlag,
 );
+
+export const selectValueYears = createSelector(
+  (store: AppStateType) => store.search.savedResult.valueYears,
+  (valueYears) => valueYears,
+);
+
+export const selectStatYear = createSelector(
+  (store: AppStateType) => store.search.savedResult.statYear,
+  (chosenLang) => chosenLang,
+);

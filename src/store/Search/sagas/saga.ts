@@ -1,6 +1,6 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { form, result, searchAdd, searchRequest } from '../ducks';
+import { form, result, saveResult, searchAdd, searchRequest } from '../ducks';
 
 import data from '../../../data/data.json';
 
@@ -12,8 +12,6 @@ import {
   selectChosenSex,
   selectChosenLang,
 } from '../../Search/selectors/selectors';
-
-import { saveResult } from '../../MainReducer/actions';
 
 import { loading } from '../ducks';
 
@@ -83,7 +81,7 @@ function* getSearchItem(action: any) {
   const valueYears = Number(totalData.Value);
   const statYear = Number(totalData.dims.YEAR);
 
-  yield put(saveResult(valueYears, statYear));
+  yield put({ type: saveResult.toString(), payload: { valueYears, statYear } });
   yield put({ type: form.toString(), payload: false });
   yield put({ type: result.toString(), payload: true });
 

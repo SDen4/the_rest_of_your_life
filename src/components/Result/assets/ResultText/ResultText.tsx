@@ -27,12 +27,16 @@ import {
   selectSearchItem,
   selectChosenSex,
   selectChosenLang,
+  selectValueYears,
+  selectStatYear,
 } from '../../../../store/Search/selectors/selectors';
 
 const ResultText: React.FC<IResultText> = ({ store }) => {
   const country: string = useSelector(selectSearchItem);
   const sex: string = useSelector(selectChosenSex);
   const lang: string = useSelector(selectChosenLang);
+  const valueYears: number = useSelector(selectValueYears);
+  const statYears: number = useSelector(selectStatYear);
 
   return (
     <h2>
@@ -45,13 +49,13 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
         : ''}
       {sex === formSexList.eng[2] || sex === formSexList.rus[2] ? '' : ''}{' '}
       {resultTextIs[lang]}{' '}
-      <span className={styles.color}>{inflection(store.valueYears, lang)}</span>
+      <span className={styles.color}>{inflection(valueYears, lang)}</span>
       .
       <br />
       {resultTextData[lang]} {resultTextWho[lang]} {resultTextFor[lang]}{' '}
-      {store.statYear} {resultTextYearRus[lang]}.
+      {statYears} {resultTextYearRus[lang]}.
       <br />
-      {store.userYears > store.valueYears && resultTextLucky[lang]}{' '}
+      {store.userYears > valueYears && resultTextLucky[lang]}{' '}
       {sex === formSexList.rus[0] ||
       sex === formSexList.eng[0] ||
       sex === formSexList.eng[2] ||
@@ -64,7 +68,7 @@ const ResultText: React.FC<IResultText> = ({ store }) => {
       <span className={styles.color}>{inflection(store.userYears, lang)}</span>,{' '}
       {resultTextCons[lang]}{' '}
       <span className={styles.color}>
-        {((store.userYears / store.valueYears) * 100).toFixed(1)}%
+        {((store.userYears / valueYears) * 100).toFixed(1)}%
       </span>{' '}
       {resultTextAfterPers[lang]}.
     </h2>
