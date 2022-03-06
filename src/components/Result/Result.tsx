@@ -51,6 +51,8 @@ const Result: React.FC<IResult> = ({ store }) => {
     }
   };
 
+  console.log('Result render');
+
   return (
     <div className={styles.resultWrapper}>
       <ResultText store={store} />

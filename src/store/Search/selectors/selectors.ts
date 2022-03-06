@@ -6,3 +6,8 @@ export const selectSearchItem = createSelector(
   (store: AppStateType) => store.search.searchItem,
   (searchItem) => searchItem,
 );
+
+export const selectLoadingFlag = createSelector(
+  (store: AppStateType) => store.search.loadingFlag,
+  (loadingFlag) => loadingFlag,
+);

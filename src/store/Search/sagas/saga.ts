@@ -11,6 +11,8 @@ import { selectCountry } from '../../MainReducer/selectors/selectors';
 
 import { openForm, openResult, saveResult } from '../../MainReducer/actions';
 
+import { loading } from '../ducks/duck';
+
 async function getData(countryName: string) {
   const params = new URLSearchParams();
   params.append('source_language', 'en');
@@ -36,6 +38,7 @@ function* getSearchItem(action: any) {
   let finalCountry: string = yield country;
 
   if (action.payload.lang === 'rus') {
+    yield put({ type: loading.toString(), payload: true });
     const translatedItem: {
       data: { translatedText: string };
       status: 'success' | 'error';
@@ -77,6 +80,7 @@ function* getSearchItem(action: any) {
   yield put(saveResult(valueYears, statYear));
   yield put(openForm(false));
   yield put(openResult(true));
+  yield put({ type: loading.toString(), payload: false });
 }
 
 export function* rootSearchSaga() {
