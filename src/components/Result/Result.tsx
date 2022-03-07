@@ -64,8 +64,6 @@ const Result: React.FC = () => {
     }
   };
 
-  console.log('Result render');
-
   return (
     <div className={styles.resultWrapper}>
       <ResultText />
