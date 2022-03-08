@@ -12,5 +12,8 @@
 
 - React
 - Redux
+- Redux-saga
+- Reduxjs/toolkit
 - Typescript
 - CSS
+- Axios
