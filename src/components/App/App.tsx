@@ -40,6 +40,8 @@ function App() {
     }
   };
 
+  console.log('test husky console');
+
   return (
     <>
       {loading ? (
