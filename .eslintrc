@@ -13,7 +13,7 @@
   ],
   "rules": {
     "prefer-const": "warn",
-    "no-console": 0,
+    "no-console": 2,
     "prettier/prettier": 1
   }
 }
