@@ -9,7 +9,7 @@ import {
   selectLoadingFlag,
   selectChosenLang,
   selectFormFlag,
-  selectResultFlag,
+  selectResultFlag
 } from '../../store/Search/selectors/selectors';
 
 import Select from '../../ui/Select';
@@ -34,13 +34,11 @@ function App() {
         choseLang(
           event.target.value === 'Eng'
             ? Object.keys(appLang)[1]
-            : Object.keys(appLang)[0],
-        ),
+            : Object.keys(appLang)[0]
+        )
       );
     }
   };
-
-  console.log('test');
 
   return (
     <>

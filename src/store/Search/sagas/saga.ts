@@ -6,7 +6,7 @@ import {
   saveBirthDate,
   saveResult,
   searchAdd,
-  searchRequestSaga,
+  searchRequestSaga
 } from '../ducks';
 
 import data from '../../../data/data.json';
@@ -18,7 +18,7 @@ import {
   selectChosenSex,
   selectChosenLang,
   selectCurrentDate,
-  selectCountry,
+  selectCountry
 } from '../../Search/selectors/selectors';
 
 import { loading, birthDateSaga } from '../ducks';
@@ -35,12 +35,12 @@ async function getData(countryName: string) {
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
       'x-rapidapi-host': 'text-translator2.p.rapidapi.com',
-      'x-rapidapi-key': '98974f94fdmshf0e666910f99f56p166f4ejsn57d787efb8c9',
-    },
+      'x-rapidapi-key': '98974f94fdmshf0e666910f99f56p166f4ejsn57d787efb8c9'
+    }
   };
 
   const response = await API.post('translate', params, config).then(
-    (res) => res.data,
+    (res) => res.data
   );
   return response;
 }
@@ -67,23 +67,23 @@ function* getSearchItem() {
 
   yield put({
     type: searchAdd.toString(),
-    payload: finalCountry,
+    payload: finalCountry
   });
 
   // from Form
-  let currentSex: string = yield currentSexForSearch(sex);
+  const currentSex: string = yield currentSexForSearch(sex);
 
   // range of relevant data by years
   const relevantRange = data.fact.filter(
     (el) =>
       el.dims.COUNTRY === country &&
       el.dims.SEX === currentSex &&
-      el.dims.GHO === 'Life expectancy at birth (years)',
+      el.dims.GHO === 'Life expectancy at birth (years)'
   );
 
   // find the data for the latest year of the range
   const totalData = relevantRange.sort((a, b) =>
-    a.dims.YEAR > b.dims.YEAR ? -1 : 1,
+    a.dims.YEAR > b.dims.YEAR ? -1 : 1
   )[0];
 
   const valueYears = Number(totalData.Value);
@@ -92,7 +92,7 @@ function* getSearchItem() {
   yield all([
     put({ type: saveResult.toString(), payload: { valueYears, statYear } }),
     put({ type: form.toString(), payload: false }),
-    put({ type: result.toString(), payload: true }),
+    put({ type: result.toString(), payload: true })
   ]);
 
   if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
@@ -113,7 +113,7 @@ function* getBirthDate(action: getBirthDateSagaType) {
 
   yield put({
     type: saveBirthDate.toString(),
-    payload: { birthDate, userYears },
+    payload: { birthDate, userYears }
   });
 }
 

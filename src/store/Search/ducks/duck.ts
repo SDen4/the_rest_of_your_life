@@ -9,7 +9,7 @@ import { saveBirthDateType, saveResultType } from '../types/typesSearch';
 import data from '../../../data/data.json';
 
 const dataCountriesList = Array.from(
-  new Set(data.fact.map((el) => el.dims.COUNTRY)),
+  new Set(data.fact.map((el) => el.dims.COUNTRY))
 );
 
 const main = 'main';
@@ -24,7 +24,7 @@ export const choseSex = createAction<string>(`${main}/CHOSE_SEX`);
 export const choseLang = createAction<string>(`${main}/CHOSE_LANG`);
 export const saveResult = createAction<saveResultType>(`${main}/SAVE_RESULT`);
 export const saveBirthDate = createAction<saveBirthDateType>(
-  `${main}/SAVE_BIRTH`,
+  `${main}/SAVE_BIRTH`
 );
 
 export const loading = createAction<boolean>(`${main}/LOADING`);
@@ -33,59 +33,59 @@ export const result = createAction<boolean>(`${main}/RESULT_FLAG`);
 
 // Reducers ==========================
 const searchItem = createReducer('', {
-  [searchAdd.toString()]: (_state, action) => action.payload,
+  [searchAdd.toString()]: (_state, action) => action.payload
 });
 
 const choseCountryItem = createReducer(dataCountriesList[0], {
-  [choseCountry.toString()]: (_state, action) => action.payload,
+  [choseCountry.toString()]: (_state, action) => action.payload
 });
 
 const chosenSex = createReducer(formSexList.rus[0], {
-  [choseSex.toString()]: (_state, action) => action.payload,
+  [choseSex.toString()]: (_state, action) => action.payload
 });
 
 const chosenLang = createReducer(Object.keys(appLang)[0], {
-  [choseLang.toString()]: (_state, action) => action.payload,
+  [choseLang.toString()]: (_state, action) => action.payload
 });
 
 const savedResult = createReducer(
   {
     valueYears: 0,
-    statYear: 0,
+    statYear: 0
   },
   {
-    [saveResult.toString()]: (_state, action) => action.payload,
-  },
+    [saveResult.toString()]: (_state, action) => action.payload
+  }
 );
 
 const savedBirthDate = createReducer(
   {
     birthDate: new Date(),
-    userYears: 0,
+    userYears: 0
   },
   {
-    [saveBirthDate.toString()]: (_state, action) => action.payload,
-  },
+    [saveBirthDate.toString()]: (_state, action) => action.payload
+  }
 );
 
 const savedInitData = createReducer(
   {
     currentDate: new Date(),
-    countriesList: dataCountriesList,
+    countriesList: dataCountriesList
   },
-  {},
+  {}
 );
 
 const loadingFlag = createReducer(false, {
-  [loading.toString()]: (_state, action) => action.payload,
+  [loading.toString()]: (_state, action) => action.payload
 });
 
 const formFlag = createReducer(false, {
-  [form.toString()]: (_state, action) => action.payload,
+  [form.toString()]: (_state, action) => action.payload
 });
 
 const resultFlag = createReducer(false, {
-  [result.toString()]: (_state, action) => action.payload,
+  [result.toString()]: (_state, action) => action.payload
 });
 
 // Root Reducer
@@ -99,7 +99,7 @@ const mainRootReducer = combineReducers({
   savedInitData,
   loadingFlag,
   formFlag,
-  resultFlag,
+  resultFlag
 });
 
 export default mainRootReducer;

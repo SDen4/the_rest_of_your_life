@@ -11,7 +11,7 @@ import {
   resultTextOr2,
   resultYearsTextinTheTable,
   resultYearsTextInTheTableLuckyMan,
-  resultYearsTextInTheTableLuckyWooman,
+  resultYearsTextInTheTableLuckyWooman
 } from '../../constants/result';
 import { formSexList } from '../../constants/form';
 
@@ -19,7 +19,7 @@ import {
   selectChosenSex,
   selectChosenLang,
   selectValueYears,
-  selectUserYears,
+  selectUserYears
 } from '../../store/Search/selectors/selectors';
 
 import { form, result } from '../../store/Search/ducks';
@@ -70,7 +70,7 @@ const Result: React.FC = () => {
       <div
         className={clsx(
           styles.tableWrapper,
-          show === 'table' && styles.tableWrapperAnime,
+          show === 'table' && styles.tableWrapperAnime
         )}
         onClick={changeResultInfo}
       >

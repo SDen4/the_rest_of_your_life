@@ -11,7 +11,7 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
   const tableCols = [];
   for (let i = 0; i < 52; i++) {
     tableCols.push(
-      <td className={styles.tableCell} height={3} key={i + 1000} />,
+      <td className={styles.tableCell} height={3} key={i + 1000} />
     );
   }
 
@@ -22,11 +22,11 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
       <td
         className={clsx(
           styles.tableCell,
-          restWeeks > i && styles.tableFullCellRest,
+          restWeeks > i && styles.tableFullCellRest
         )}
         height={3}
         key={i + 1000}
-      />,
+      />
     );
   }
 
@@ -41,11 +41,11 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
           className={clsx(
             styles.row,
             userYears > i && styles.tableFullCell,
-            i > rowsNum && styles.tableExtraCell,
+            i > rowsNum && styles.tableExtraCell
           )}
         >
           {i === roundUserYears ? tableColsRest : tableCols}
-        </tr>,
+        </tr>
       );
     }
     return arrToRender;

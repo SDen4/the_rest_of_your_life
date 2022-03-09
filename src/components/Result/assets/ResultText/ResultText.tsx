@@ -15,7 +15,7 @@ import {
   resultTextMan,
   resultTextWho,
   resultTextWoman,
-  resultTextYearRus,
+  resultTextYearRus
 } from '../../../../constants/result';
 
 import styles from './ResultText.module.css';
@@ -26,7 +26,7 @@ import {
   selectChosenLang,
   selectValueYears,
   selectStatYear,
-  selectUserYears,
+  selectUserYears
 } from '../../../../store/Search/selectors/selectors';
 
 const ResultText: React.FC = () => {

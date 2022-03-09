@@ -9,7 +9,7 @@ import {
   formNames,
   formSex,
   formSexList,
-  formTitle,
+  formTitle
 } from '../../constants/form';
 
 import Button from '../../ui/Button';
@@ -20,14 +20,14 @@ import {
   selectChosenLang,
   selectCountriesList,
   selectBirthDate,
-  selectCountry,
+  selectCountry
 } from '../../store/Search/selectors/selectors';
 
 import {
   choseSex,
   birthDateSaga,
   choseCountry,
-  searchRequestSaga,
+  searchRequestSaga
 } from '../../store/Search/ducks';
 
 import styles from './Form.module.css';
@@ -55,7 +55,7 @@ const Form: React.FC = () => {
   };
 
   const [localBirthDate, setLocalBirthDate] = useState(
-    format(birthDate, 'yyyy-MM-dd'),
+    format(birthDate, 'yyyy-MM-dd')
   );
 
   const choseNewBirthDate = (event: any) => {
