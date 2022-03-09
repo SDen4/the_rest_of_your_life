@@ -27,12 +27,12 @@
 
 @media (max-width: 480px) {
   .label {
-    font-size: 12px;
+    font-size: 18px;
     margin-right: 5px;
   }
 
   .select {
-    font-size: 12px;
-    padding: 1px;
+    font-size: 18px;
+    padding: 2px;
   }
 }
