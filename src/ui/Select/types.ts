@@ -1,5 +1,5 @@
 export interface ISelect {
-  onChange: (event: any) => void;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   list: string[];
   currentValue: string;
   title?: string;
