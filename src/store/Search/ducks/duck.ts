@@ -77,6 +77,7 @@ const savedInitData = createReducer(
 );
 
 const loadingFlag = createReducer(false, {
+  [result.toString()]: () => false,
   [loading.toString()]: (_state, action) => action.payload
 });
 
@@ -85,7 +86,8 @@ const formFlag = createReducer(false, {
 });
 
 const resultFlag = createReducer(false, {
-  [result.toString()]: (_state, action) => action.payload
+  [result.toString()]: (_state, action) => action.payload,
+  [loading.toString()]: () => false
 });
 
 // Root Reducer

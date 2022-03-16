@@ -94,8 +94,6 @@ function* getSearchItem() {
     put({ type: form.toString(), payload: false }),
     put({ type: result.toString(), payload: true })
   ]);
-
-  if (lang === 'rus') yield put({ type: loading.toString(), payload: false });
 }
 
 function* getBirthDate(action: getBirthDateSagaType) {
