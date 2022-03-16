@@ -58,10 +58,12 @@ const Form: React.FC = () => {
     format(birthDate, 'yyyy-MM-dd')
   );
 
-  const choseNewBirthDate = (event: any) => {
+  const choseNewBirthDate = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.valueAsDate) {
       dispatch(birthDateSaga(event.target.valueAsDate));
-      setLocalBirthDate(() => format(event.target.valueAsDate, 'yyyy-MM-dd'));
+      setLocalBirthDate(() =>
+        format(event.target.valueAsDate as Date, 'yyyy-MM-dd')
+      );
     }
   };
 

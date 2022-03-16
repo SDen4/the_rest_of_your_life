@@ -20,7 +20,7 @@ import Loader from '../../ui/Loader';
 
 import styles from './App.module.css';
 
-function App() {
+function App(): JSX.Element {
   const dispatch = useDispatch();
 
   const lang: string = useSelector(selectChosenLang);
@@ -28,7 +28,7 @@ function App() {
   const formFlag: boolean = useSelector(selectFormFlag);
   const resultFlag: boolean = useSelector(selectResultFlag);
 
-  const changeLang = (event: any) => {
+  const changeLang = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value) {
       dispatch(
         choseLang(
@@ -39,8 +39,6 @@ function App() {
       );
     }
   };
-
-  console.log('test husky console');
 
   return (
     <>

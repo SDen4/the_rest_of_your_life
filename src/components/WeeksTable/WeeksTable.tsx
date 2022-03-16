@@ -16,7 +16,7 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
   }
 
   const restWeeks = Math.floor((1 - (roundUserYears - userYears)) * 52);
-  const tableColsRest: any[] = [];
+  const tableColsRest: unknown[] = [];
   for (let i = 1; i <= 52; i++) {
     tableColsRest.push(
       <td
@@ -30,7 +30,7 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
     );
   }
 
-  const tableInners = (rowsNum: number, tableCols: any[]) => {
+  const tableInners = (rowsNum: number, tableCols: unknown[]) => {
     const arrToRender = [];
     const tableRows = valueYears > userYears ? rowsNum : userYears;
 
