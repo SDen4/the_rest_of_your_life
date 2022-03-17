@@ -21,7 +21,7 @@ const inflection = (numInn: number, lang: string): string => {
       return `${numInn.toFixed(1)} лет`;
     }
   } else {
-    return `${num} years`;
+    return `${numInn.toFixed(1)} years`;
   }
 };
 
