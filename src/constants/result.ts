@@ -32,7 +32,7 @@ export const resultTextData: constType = {
 
 export const resultTextYearRus: constType = {
   rus: 'год',
-  eng: ''
+  eng: 'year'
 };
 
 export const resultTextWho: constType = {
