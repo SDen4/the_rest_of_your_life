@@ -115,7 +115,7 @@ function* getBirthDate(action: getBirthDateSagaType) {
   });
 }
 
-export function* rootSearchSaga() {
+export function* rootSearchSaga(): Generator<unknown> {
   yield takeEvery(searchRequestSaga, getSearchItem);
   yield takeEvery(birthDateSaga, getBirthDate);
 }
