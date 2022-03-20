@@ -17,3 +17,8 @@
 - Typescript
 - CSS
 - Axios
+- date-fns
+
+- eslint
+- prettier
+- husky
