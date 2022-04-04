@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { appLang } from '../../constants/app';
@@ -14,11 +14,12 @@ import {
 
 import Select from '../../ui/Select';
 import Disclaimer from '../Disclaimer';
-import Form from '../Form';
-import Result from '../Result';
 import Loader from '../../ui/Loader';
 
 import styles from './App.module.css';
+
+const LazyResult = React.lazy(() => import('../Result'));
+const LazyForm = React.lazy(() => import('../Form'));
 
 function App(): JSX.Element {
   const dispatch = useDispatch();
@@ -60,9 +61,17 @@ function App(): JSX.Element {
 
           {!formFlag && !resultFlag && <Disclaimer lang={lang} />}
 
-          {formFlag && !resultFlag && <Form />}
+          {formFlag && !resultFlag && (
+            <Suspense fallback={<Loader />}>
+              <LazyForm />
+            </Suspense>
+          )}
 
-          {!formFlag && resultFlag && <Result />}
+          {!formFlag && resultFlag && (
+            <Suspense fallback={<Loader />}>
+              <LazyResult />
+            </Suspense>
+          )}
         </div>
       )}
     </>
