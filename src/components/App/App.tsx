@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { appLang } from '../../constants/app';
@@ -29,6 +29,12 @@ function App(): JSX.Element {
   const formFlag: boolean = useSelector(selectFormFlag);
   const resultFlag: boolean = useSelector(selectResultFlag);
 
+  // app height
+  const [appHeight, setAppHeight] = useState<number>(0);
+  useEffect(() => {
+    setAppHeight(window.innerHeight);
+  }, []);
+
   const changeLang = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value) {
       dispatch(
@@ -46,7 +52,7 @@ function App(): JSX.Element {
       {loading ? (
         <Loader />
       ) : (
-        <div className={styles.appWrapper}>
+        <div className={styles.appWrapper} style={{ minHeight: appHeight }}>
           <header className={styles.header}>
             <Select
               onChange={changeLang}

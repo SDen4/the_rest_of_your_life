@@ -6,7 +6,6 @@
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  min-height: 100vh;
   background: radial-gradient(gray -155%, black 95%);
   color: #d3d3d3;
   padding: 20px;
