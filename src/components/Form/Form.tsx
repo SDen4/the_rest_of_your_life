@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
 import clsx from 'clsx';
@@ -112,4 +112,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default memo(Form);

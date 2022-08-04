@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { ISelect } from './types';
 
@@ -23,4 +23,4 @@ const Select: React.FC<ISelect> = ({ title, onChange, list, currentValue }) => {
   );
 };
 
-export default Select;
+export default memo(Select);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Button from '../../ui/Button';
@@ -36,4 +36,4 @@ const Disclaimer: React.FC<IDisclaimer> = ({ lang }) => {
   );
 };
 
-export default Disclaimer;
+export default memo(Disclaimer);

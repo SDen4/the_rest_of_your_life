@@ -12,8 +12,9 @@ import {
   selectResultFlag
 } from '../../store/Search/selectors/selectors';
 
-import Select from '../../ui/Select';
 import Disclaimer from '../Disclaimer';
+
+import Select from '../../ui/Select';
 import Loader from '../../ui/Loader';
 
 import styles from './App.module.css';

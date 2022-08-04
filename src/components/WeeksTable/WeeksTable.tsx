@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import clsx from 'clsx';
 
 import { IWeeksTable } from './types';
@@ -6,7 +6,7 @@ import { IWeeksTable } from './types';
 import styles from './WeeksTable.module.css';
 
 const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
-  const roundUserYears = Math.ceil(userYears);
+  const roundUserYears = useMemo(() => Math.ceil(userYears), []);
 
   const tableCols = [];
   for (let i = 0; i < 52; i++) {
@@ -15,7 +15,11 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
     );
   }
 
-  const restWeeks = Math.floor((1 - (roundUserYears - userYears)) * 52);
+  const restWeeks = useMemo(
+    () => Math.floor((1 - (roundUserYears - userYears)) * 52),
+    []
+  );
+
   const tableColsRest: unknown[] = [];
   for (let i = 1; i <= 52; i++) {
     tableColsRest.push(
@@ -60,4 +64,4 @@ const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
   );
 };
 
-export default WeeksTable;
+export default memo(WeeksTable);

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
+
 import { formSexList } from '../../../../constants/form';
 
 import {
@@ -18,8 +19,8 @@ import {
   resultTextYearRus
 } from '../../../../constants/result';
 
-import styles from './ResultText.module.css';
 import inflection from '../../../../utils/inflection';
+
 import {
   selectSearchItem,
   selectChosenSex,
@@ -28,6 +29,8 @@ import {
   selectStatYear,
   selectUserYears
 } from '../../../../store/Search/selectors/selectors';
+
+import styles from './ResultText.module.css';
 
 const ResultText: React.FC = () => {
   const country: string = useSelector(selectSearchItem);
@@ -74,4 +77,4 @@ const ResultText: React.FC = () => {
   );
 };
 
-export default ResultText;
+export default memo(ResultText);

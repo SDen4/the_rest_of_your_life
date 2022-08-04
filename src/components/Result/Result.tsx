@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 
@@ -30,6 +30,7 @@ import Button from '../../ui/Button';
 import WeeksTable from '../WeeksTable';
 
 import ResultText from './assets/ResultText';
+
 import { StateItemType, StateType } from './types';
 
 import styles from './Result.module.css';
@@ -42,10 +43,13 @@ const Result: React.FC = () => {
   const valueYears: number = useSelector(selectValueYears);
   const userYears: number = useSelector(selectUserYears);
 
-  const height =
-    userYears < valueYears
-      ? `${valueYears * 7 - 1}px`
-      : `${userYears * 7 - 1}px`;
+  const height = useMemo(
+    () =>
+      userYears < valueYears
+        ? `${valueYears * 7 - 1}px`
+        : `${userYears * 7 - 1}px`,
+    []
+  );
 
   const states: StateType = ['table', 'years', 'weeks', 'final'];
   const [show, setShow] = useState<StateItemType>(states[0]);
@@ -137,4 +141,4 @@ const Result: React.FC = () => {
   );
 };
 
-export default Result;
+export default memo(Result);
