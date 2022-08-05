@@ -72,7 +72,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className={styles.formComponent}>
+    <section className={styles.formComponent}>
       <h2 className={styles.subTitle}>{formTitle[lang]}</h2>
 
       <form className={styles.formWrapper}>
@@ -108,7 +108,7 @@ const Form: React.FC = () => {
         buttonText={formButton[lang]}
         buttonOnClickHandler={calculateHandler}
       />
-    </div>
+    </section>
   );
 };
 

@@ -53,7 +53,7 @@ function App(): JSX.Element {
       {loading ? (
         <Loader />
       ) : (
-        <div className={styles.appWrapper} style={{ minHeight: appHeight }}>
+        <main className={styles.appWrapper} style={{ minHeight: appHeight }}>
           <header className={styles.header}>
             <Select
               onChange={changeLang}
@@ -79,7 +79,7 @@ function App(): JSX.Element {
               <LazyResult />
             </Suspense>
           )}
-        </div>
+        </main>
       )}
     </>
   );

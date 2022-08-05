@@ -21,9 +21,7 @@ const Disclaimer: React.FC<IDisclaimer> = ({ lang }) => {
   return (
     <>
       <div className={styles.disclaimerText}>
-        <div>
-          <p>{DisclaimerText[lang]}</p>
-        </div>
+        <p>{DisclaimerText[lang]}</p>
       </div>
 
       <div className={styles.buttonWrapper}>

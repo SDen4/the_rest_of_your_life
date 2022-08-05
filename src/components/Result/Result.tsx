@@ -69,7 +69,7 @@ const Result: React.FC = () => {
   };
 
   return (
-    <div className={styles.resultWrapper}>
+    <section className={styles.resultWrapper}>
       <ResultText />
       <div
         className={clsx(
@@ -137,7 +137,7 @@ const Result: React.FC = () => {
         buttonText={resultButton[lang]}
         buttonOnClickHandler={backHandler}
       />
-    </div>
+    </section>
   );
 };
 
