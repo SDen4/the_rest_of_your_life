@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/the_rest_of_your_life/static/css/main.0bb185cb.chunk.css",
+    "main.css": "/the_rest_of_your_life/static/css/main.8b022542.chunk.css",
     "main.js": "/the_rest_of_your_life/static/js/main.39e4d01a.chunk.js",
     "main.js.map": "/the_rest_of_your_life/static/js/main.39e4d01a.chunk.js.map",
     "runtime-main.js": "/the_rest_of_your_life/static/js/runtime-main.a64affa0.js",
@@ -18,13 +18,13 @@
     "index.html": "/the_rest_of_your_life/index.html",
     "static/css/3.dc61907c.chunk.css.map": "/the_rest_of_your_life/static/css/3.dc61907c.chunk.css.map",
     "static/css/4.9a1d89c1.chunk.css.map": "/the_rest_of_your_life/static/css/4.9a1d89c1.chunk.css.map",
-    "static/css/main.0bb185cb.chunk.css.map": "/the_rest_of_your_life/static/css/main.0bb185cb.chunk.css.map",
+    "static/css/main.8b022542.chunk.css.map": "/the_rest_of_your_life/static/css/main.8b022542.chunk.css.map",
     "static/js/2.1713dea2.chunk.js.LICENSE.txt": "/the_rest_of_your_life/static/js/2.1713dea2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a64affa0.js",
     "static/js/2.1713dea2.chunk.js",
-    "static/css/main.0bb185cb.chunk.css",
+    "static/css/main.8b022542.chunk.css",
     "static/js/main.39e4d01a.chunk.js"
   ]
 }
