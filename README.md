@@ -10,14 +10,15 @@
 
 ### Stack:
 
-- React
-- Redux
-- Redux-saga
-- Reduxjs/toolkit
-- Typescript
+- typescript
+- react
+- redux
+- redux-saga
+- reduxjs/toolkit
 - CSS
-- Axios
+- axios
 - date-fns
+- clsx
 
 - eslint
 - prettier
