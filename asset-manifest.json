@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/the_rest_of_your_life/static/css/main.8b022542.chunk.css",
-    "main.js": "/the_rest_of_your_life/static/js/main.39e4d01a.chunk.js",
-    "main.js.map": "/the_rest_of_your_life/static/js/main.39e4d01a.chunk.js.map",
+    "main.css": "/the_rest_of_your_life/static/css/main.921a0d68.chunk.css",
+    "main.js": "/the_rest_of_your_life/static/js/main.c9a1f307.chunk.js",
+    "main.js.map": "/the_rest_of_your_life/static/js/main.c9a1f307.chunk.js.map",
     "runtime-main.js": "/the_rest_of_your_life/static/js/runtime-main.a64affa0.js",
     "runtime-main.js.map": "/the_rest_of_your_life/static/js/runtime-main.a64affa0.js.map",
-    "static/js/2.1713dea2.chunk.js": "/the_rest_of_your_life/static/js/2.1713dea2.chunk.js",
-    "static/js/2.1713dea2.chunk.js.map": "/the_rest_of_your_life/static/js/2.1713dea2.chunk.js.map",
+    "static/js/2.fe53c9df.chunk.js": "/the_rest_of_your_life/static/js/2.fe53c9df.chunk.js",
+    "static/js/2.fe53c9df.chunk.js.map": "/the_rest_of_your_life/static/js/2.fe53c9df.chunk.js.map",
     "static/css/3.dc61907c.chunk.css": "/the_rest_of_your_life/static/css/3.dc61907c.chunk.css",
     "static/js/3.ea114b17.chunk.js": "/the_rest_of_your_life/static/js/3.ea114b17.chunk.js",
     "static/js/3.ea114b17.chunk.js.map": "/the_rest_of_your_life/static/js/3.ea114b17.chunk.js.map",
@@ -18,13 +18,13 @@
     "index.html": "/the_rest_of_your_life/index.html",
     "static/css/3.dc61907c.chunk.css.map": "/the_rest_of_your_life/static/css/3.dc61907c.chunk.css.map",
     "static/css/4.9a1d89c1.chunk.css.map": "/the_rest_of_your_life/static/css/4.9a1d89c1.chunk.css.map",
-    "static/css/main.8b022542.chunk.css.map": "/the_rest_of_your_life/static/css/main.8b022542.chunk.css.map",
-    "static/js/2.1713dea2.chunk.js.LICENSE.txt": "/the_rest_of_your_life/static/js/2.1713dea2.chunk.js.LICENSE.txt"
+    "static/css/main.921a0d68.chunk.css.map": "/the_rest_of_your_life/static/css/main.921a0d68.chunk.css.map",
+    "static/js/2.fe53c9df.chunk.js.LICENSE.txt": "/the_rest_of_your_life/static/js/2.fe53c9df.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a64affa0.js",
-    "static/js/2.1713dea2.chunk.js",
-    "static/css/main.8b022542.chunk.css",
-    "static/js/main.39e4d01a.chunk.js"
+    "static/js/2.fe53c9df.chunk.js",
+    "static/css/main.921a0d68.chunk.css",
+    "static/js/main.c9a1f307.chunk.js"
   ]
 }
