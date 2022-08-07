@@ -8,6 +8,11 @@
   padding: 30px;
   box-sizing: border-box;
   background: radial-gradient(gray -155%, black 95%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .ldsDualRing {
