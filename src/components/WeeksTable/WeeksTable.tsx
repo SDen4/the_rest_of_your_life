@@ -1,11 +1,14 @@
 import React, { memo, useMemo } from 'react';
 import clsx from 'clsx';
 
-import { IWeeksTable } from './types';
-
 import styles from './WeeksTable.module.css';
 
-const WeeksTable: React.FC<IWeeksTable> = ({ valueYears, userYears }) => {
+interface IProps {
+  valueYears: number;
+  userYears: number;
+}
+
+const WeeksTable: React.FC<IProps> = ({ valueYears, userYears }) => {
   const roundUserYears = useMemo(() => Math.ceil(userYears), []);
 
   const tableCols = [];

@@ -31,9 +31,10 @@ import WeeksTable from '../WeeksTable';
 
 import ResultText from './assets/ResultText';
 
-import { StateItemType, StateType } from './types';
-
 import styles from './Result.module.css';
+
+type StateItemType = 'table' | 'years' | 'weeks' | 'final';
+type StateType = StateItemType[];
 
 const Result: React.FC = () => {
   const dispatch = useDispatch();

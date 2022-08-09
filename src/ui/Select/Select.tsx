@@ -1,10 +1,15 @@
 import React, { memo } from 'react';
 
-import { ISelect } from './types';
-
 import styles from './Select.module.css';
 
-const Select: React.FC<ISelect> = ({ title, onChange, list, currentValue }) => {
+interface IProps {
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  list: string[];
+  currentValue: string;
+  title?: string;
+}
+
+const Select: React.FC<IProps> = ({ title, onChange, list, currentValue }) => {
   return (
     <>
       {title && <label className={styles.label}>{title}</label>}

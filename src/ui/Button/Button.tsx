@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { IButton } from './types';
-
 import styles from './Button.module.css';
 
-const Button: React.FC<IButton> = ({ buttonText, buttonOnClickHandler }) => {
+interface IProps {
+  buttonText: string;
+  buttonOnClickHandler: () => void;
+}
+
+const Button: React.FC<IProps> = ({ buttonText, buttonOnClickHandler }) => {
   return (
     <button
       type="button"

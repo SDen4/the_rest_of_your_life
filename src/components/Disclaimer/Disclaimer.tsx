@@ -6,12 +6,14 @@ import Button from '../../ui/Button';
 import { DisclaimerText } from '../../constants/disclaimer';
 import { DisclaimerButtonText } from '../../constants/disclaimer';
 
-import { IDisclaimer } from './types';
-
 import styles from './Disclaimer.module.css';
 import { form } from '../../store/Search/ducks';
 
-const Disclaimer: React.FC<IDisclaimer> = ({ lang }) => {
+interface IProps {
+  lang: string;
+}
+
+const Disclaimer: React.FC<IProps> = ({ lang }) => {
   const dispatch = useDispatch();
 
   const buttonOnClickHandler = () => {
