@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import clsx from 'clsx';
 
 import styles from './WeeksTable.module.css';
@@ -8,7 +8,7 @@ interface IProps {
   userYears: number;
 }
 
-const WeeksTable: React.FC<IProps> = ({ valueYears, userYears }) => {
+export const WeeksTable: React.FC<IProps> = ({ valueYears, userYears }) => {
   const roundUserYears = useMemo(() => Math.ceil(userYears), []);
 
   const tableCols = [];
@@ -66,5 +66,3 @@ const WeeksTable: React.FC<IProps> = ({ valueYears, userYears }) => {
     </div>
   );
 };
-
-export default memo(WeeksTable);
