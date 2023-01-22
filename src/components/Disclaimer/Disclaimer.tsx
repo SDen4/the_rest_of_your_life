@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
-import Button from '../../ui/Button';
-
+import { Button } from '../../ui/Button';
 import { DisclaimerText } from '../../constants/disclaimer';
 import { DisclaimerButtonText } from '../../constants/disclaimer';
 

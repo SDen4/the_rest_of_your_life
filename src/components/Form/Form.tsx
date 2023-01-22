@@ -12,7 +12,7 @@ import {
   formTitle
 } from '../../constants/form';
 
-import Button from '../../ui/Button';
+import { Button } from '../../ui/Button';
 import Select from '../../ui/Select';
 
 import {

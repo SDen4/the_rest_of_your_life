@@ -26,7 +26,7 @@ import { form, result } from '../../store/Search/ducks';
 
 import inflection from '../../utils/inflection';
 
-import Button from '../../ui/Button';
+import { Button } from '../../ui/Button';
 import WeeksTable from '../WeeksTable';
 
 import ResultText from './assets/ResultText';

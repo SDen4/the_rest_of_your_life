@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import styles from './Button.module.css';
 
@@ -7,7 +7,7 @@ interface IProps {
   buttonOnClickHandler: () => void;
 }
 
-const Button: React.FC<IProps> = ({ buttonText, buttonOnClickHandler }) => {
+export const Button: FC<IProps> = ({ buttonText, buttonOnClickHandler }) => {
   return (
     <button
       type="button"
@@ -18,5 +18,3 @@ const Button: React.FC<IProps> = ({ buttonText, buttonOnClickHandler }) => {
     </button>
   );
 };
-
-export default Button;
