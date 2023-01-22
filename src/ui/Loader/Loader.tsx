@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import styles from './Loader.module.css';
+import styles from './styles.module.css';
 
 export const Loader = (): JSX.Element => {
   const el = document.getElementsByTagName('body')[0];

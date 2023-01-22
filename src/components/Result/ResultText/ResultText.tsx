@@ -30,7 +30,7 @@ import {
   selectUserYears
 } from '../../../store/Search/selectors/selectors';
 
-import styles from './ResultText.module.css';
+import styles from './styles.module.css';
 
 export const ResultText: FC = () => {
   const country = useSelector(selectSearchItem);

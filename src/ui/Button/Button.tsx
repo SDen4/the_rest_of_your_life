@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import styles from './Button.module.css';
+import styles from './styles.module.css';
 
 interface IProps {
   buttonText: string;

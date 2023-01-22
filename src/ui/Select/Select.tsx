@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import styles from './Select.module.css';
+import styles from './styles.module.css';
 
 interface IProps {
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;

@@ -7,7 +7,7 @@ import { DisclaimerButtonText } from '../../constants/disclaimer';
 
 import { form } from '../../store/Search/ducks';
 
-import styles from './Disclaimer.module.css';
+import styles from './styles.module.css';
 
 interface IProps {
   lang: string;

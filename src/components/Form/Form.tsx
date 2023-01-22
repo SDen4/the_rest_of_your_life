@@ -30,7 +30,7 @@ import {
   searchRequestSaga
 } from '../../store/Search/ducks';
 
-import styles from './Form.module.css';
+import styles from './styles.module.css';
 
 const Form: React.FC = () => {
   const dispatch = useDispatch();

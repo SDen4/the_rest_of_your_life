@@ -12,7 +12,7 @@ import { Disclaimer } from '../Disclaimer';
 import { Header } from '../Header';
 import { Loader } from '../../ui/Loader';
 
-import styles from './App.module.css';
+import styles from './styles.module.css';
 
 const LazyResult = React.lazy(() => import('../Result'));
 const LazyForm = React.lazy(() => import('../Form'));

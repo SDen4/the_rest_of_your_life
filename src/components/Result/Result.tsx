@@ -29,7 +29,7 @@ import { Button } from '../../ui/Button';
 import { WeeksTable } from '../WeeksTable';
 import { ResultText } from './ResultText';
 
-import styles from './Result.module.css';
+import styles from './styles.module.css';
 
 type StateItemType = 'table' | 'years' | 'weeks' | 'final';
 type StateType = StateItemType[];
