@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/the_rest_of_your_life/static/css/main.921a0d68.chunk.css",
-    "main.js": "/the_rest_of_your_life/static/js/main.c9a1f307.chunk.js",
-    "main.js.map": "/the_rest_of_your_life/static/js/main.c9a1f307.chunk.js.map",
-    "runtime-main.js": "/the_rest_of_your_life/static/js/runtime-main.a64affa0.js",
-    "runtime-main.js.map": "/the_rest_of_your_life/static/js/runtime-main.a64affa0.js.map",
-    "static/js/2.fe53c9df.chunk.js": "/the_rest_of_your_life/static/js/2.fe53c9df.chunk.js",
-    "static/js/2.fe53c9df.chunk.js.map": "/the_rest_of_your_life/static/js/2.fe53c9df.chunk.js.map",
-    "static/css/3.dc61907c.chunk.css": "/the_rest_of_your_life/static/css/3.dc61907c.chunk.css",
-    "static/js/3.ea114b17.chunk.js": "/the_rest_of_your_life/static/js/3.ea114b17.chunk.js",
-    "static/js/3.ea114b17.chunk.js.map": "/the_rest_of_your_life/static/js/3.ea114b17.chunk.js.map",
-    "static/css/4.9a1d89c1.chunk.css": "/the_rest_of_your_life/static/css/4.9a1d89c1.chunk.css",
-    "static/js/4.271d27ae.chunk.js": "/the_rest_of_your_life/static/js/4.271d27ae.chunk.js",
-    "static/js/4.271d27ae.chunk.js.map": "/the_rest_of_your_life/static/js/4.271d27ae.chunk.js.map",
-    "static/js/5.ee310f8a.chunk.js": "/the_rest_of_your_life/static/js/5.ee310f8a.chunk.js",
-    "static/js/5.ee310f8a.chunk.js.map": "/the_rest_of_your_life/static/js/5.ee310f8a.chunk.js.map",
+    "main.css": "/the_rest_of_your_life/static/css/main.6a06869e.chunk.css",
+    "main.js": "/the_rest_of_your_life/static/js/main.bc17b7c6.chunk.js",
+    "main.js.map": "/the_rest_of_your_life/static/js/main.bc17b7c6.chunk.js.map",
+    "runtime-main.js": "/the_rest_of_your_life/static/js/runtime-main.886f6c8e.js",
+    "runtime-main.js.map": "/the_rest_of_your_life/static/js/runtime-main.886f6c8e.js.map",
+    "static/js/2.38a74fc5.chunk.js": "/the_rest_of_your_life/static/js/2.38a74fc5.chunk.js",
+    "static/js/2.38a74fc5.chunk.js.map": "/the_rest_of_your_life/static/js/2.38a74fc5.chunk.js.map",
+    "static/css/3.81d184e0.chunk.css": "/the_rest_of_your_life/static/css/3.81d184e0.chunk.css",
+    "static/js/3.bba96214.chunk.js": "/the_rest_of_your_life/static/js/3.bba96214.chunk.js",
+    "static/js/3.bba96214.chunk.js.map": "/the_rest_of_your_life/static/js/3.bba96214.chunk.js.map",
+    "static/css/4.2000234f.chunk.css": "/the_rest_of_your_life/static/css/4.2000234f.chunk.css",
+    "static/js/4.6d56dcd6.chunk.js": "/the_rest_of_your_life/static/js/4.6d56dcd6.chunk.js",
+    "static/js/4.6d56dcd6.chunk.js.map": "/the_rest_of_your_life/static/js/4.6d56dcd6.chunk.js.map",
+    "static/js/5.d7e5c5b5.chunk.js": "/the_rest_of_your_life/static/js/5.d7e5c5b5.chunk.js",
+    "static/js/5.d7e5c5b5.chunk.js.map": "/the_rest_of_your_life/static/js/5.d7e5c5b5.chunk.js.map",
     "index.html": "/the_rest_of_your_life/index.html",
-    "static/css/3.dc61907c.chunk.css.map": "/the_rest_of_your_life/static/css/3.dc61907c.chunk.css.map",
-    "static/css/4.9a1d89c1.chunk.css.map": "/the_rest_of_your_life/static/css/4.9a1d89c1.chunk.css.map",
-    "static/css/main.921a0d68.chunk.css.map": "/the_rest_of_your_life/static/css/main.921a0d68.chunk.css.map",
-    "static/js/2.fe53c9df.chunk.js.LICENSE.txt": "/the_rest_of_your_life/static/js/2.fe53c9df.chunk.js.LICENSE.txt"
+    "static/css/3.81d184e0.chunk.css.map": "/the_rest_of_your_life/static/css/3.81d184e0.chunk.css.map",
+    "static/css/4.2000234f.chunk.css.map": "/the_rest_of_your_life/static/css/4.2000234f.chunk.css.map",
+    "static/css/main.6a06869e.chunk.css.map": "/the_rest_of_your_life/static/css/main.6a06869e.chunk.css.map",
+    "static/js/2.38a74fc5.chunk.js.LICENSE.txt": "/the_rest_of_your_life/static/js/2.38a74fc5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a64affa0.js",
-    "static/js/2.fe53c9df.chunk.js",
-    "static/css/main.921a0d68.chunk.css",
-    "static/js/main.c9a1f307.chunk.js"
+    "static/js/runtime-main.886f6c8e.js",
+    "static/js/2.38a74fc5.chunk.js",
+    "static/css/main.6a06869e.chunk.css",
+    "static/js/main.bc17b7c6.chunk.js"
   ]
 }
