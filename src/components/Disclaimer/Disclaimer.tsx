@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Button from '../../ui/Button';
@@ -6,14 +6,15 @@ import Button from '../../ui/Button';
 import { DisclaimerText } from '../../constants/disclaimer';
 import { DisclaimerButtonText } from '../../constants/disclaimer';
 
-import styles from './Disclaimer.module.css';
 import { form } from '../../store/Search/ducks';
+
+import styles from './Disclaimer.module.css';
 
 interface IProps {
   lang: string;
 }
 
-const Disclaimer: React.FC<IProps> = ({ lang }) => {
+export const Disclaimer: FC<IProps> = ({ lang }) => {
   const dispatch = useDispatch();
 
   const buttonOnClickHandler = () => {
@@ -35,5 +36,3 @@ const Disclaimer: React.FC<IProps> = ({ lang }) => {
     </>
   );
 };
-
-export default memo(Disclaimer);

@@ -8,7 +8,7 @@ import {
   selectIsResult
 } from '../../store/Search/selectors/selectors';
 
-import Disclaimer from '../Disclaimer';
+import { Disclaimer } from '../Disclaimer';
 import { Header } from '../Header';
 import Loader from '../../ui/Loader';
 
