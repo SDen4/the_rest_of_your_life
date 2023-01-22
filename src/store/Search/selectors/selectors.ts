@@ -17,19 +17,19 @@ export const selectChosenLang = createSelector(
   (chosenLang) => chosenLang
 );
 
-export const selectLoadingFlag = createSelector(
-  (store: AppStateType) => store.main.loadingFlag,
-  (loadingFlag) => loadingFlag
+export const selectIsLoading = createSelector(
+  (store: AppStateType) => store.main.isLoading,
+  (isLoading) => isLoading
 );
 
-export const selectFormFlag = createSelector(
-  (store: AppStateType) => store.main.formFlag,
-  (formFlag) => formFlag
+export const selectIsForm = createSelector(
+  (store: AppStateType) => store.main.isForm,
+  (isForm) => isForm
 );
 
-export const selectResultFlag = createSelector(
-  (store: AppStateType) => store.main.resultFlag,
-  (resultFlag) => resultFlag
+export const selectIsResult = createSelector(
+  (store: AppStateType) => store.main.isResult,
+  (isResult) => isResult
 );
 
 export const selectValueYears = createSelector(

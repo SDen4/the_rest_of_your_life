@@ -27,9 +27,9 @@ export const saveBirthDate = createAction<saveBirthDateType>(
   `${main}/SAVE_BIRTH`
 );
 
-export const loading = createAction<boolean>(`${main}/LOADING`);
-export const form = createAction<boolean>(`${main}/FORM_FLAG`);
-export const result = createAction<boolean>(`${main}/RESULT_FLAG`);
+export const loading = createAction<boolean>(`${main}/IS_LOADING`);
+export const form = createAction<boolean>(`${main}/IS_FORM`);
+export const result = createAction<boolean>(`${main}/IS_RESULT`);
 
 // Reducers ==========================
 const searchItem = createReducer('', {
@@ -76,16 +76,16 @@ const savedInitData = createReducer(
   {}
 );
 
-const loadingFlag = createReducer(false, {
+const isLoading = createReducer(false, {
   [result.toString()]: () => false,
   [loading.toString()]: (_state, action) => action.payload
 });
 
-const formFlag = createReducer(false, {
+const isForm = createReducer(false, {
   [form.toString()]: (_state, action) => action.payload
 });
 
-const resultFlag = createReducer(false, {
+const isResult = createReducer(false, {
   [result.toString()]: (_state, action) => action.payload,
   [loading.toString()]: () => false
 });
@@ -99,9 +99,9 @@ const mainRootReducer = combineReducers({
   savedResult,
   savedBirthDate,
   savedInitData,
-  loadingFlag,
-  formFlag,
-  resultFlag
+  isLoading,
+  isForm,
+  isResult
 });
 
 export default mainRootReducer;

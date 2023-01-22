@@ -6,10 +6,10 @@ import { appLang } from '../../constants/app';
 import { choseLang } from '../../store/Search/ducks';
 
 import {
-  selectLoadingFlag,
+  selectIsLoading,
   selectChosenLang,
-  selectFormFlag,
-  selectResultFlag
+  selectIsForm,
+  selectIsResult
 } from '../../store/Search/selectors/selectors';
 
 import Disclaimer from '../Disclaimer';
@@ -26,9 +26,9 @@ function App(): JSX.Element {
   const dispatch = useDispatch();
 
   const lang: string = useSelector(selectChosenLang);
-  const loading: boolean = useSelector(selectLoadingFlag);
-  const formFlag: boolean = useSelector(selectFormFlag);
-  const resultFlag: boolean = useSelector(selectResultFlag);
+  const isLoading: boolean = useSelector(selectIsLoading);
+  const isForm: boolean = useSelector(selectIsForm);
+  const isResult: boolean = useSelector(selectIsResult);
 
   // app height
   const [appHeight, setAppHeight] = useState<number>(0);
@@ -57,7 +57,7 @@ function App(): JSX.Element {
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <Loader />
       ) : (
         <main className={styles.appWrapper} style={{ minHeight: appHeight }}>
@@ -73,15 +73,15 @@ function App(): JSX.Element {
             />
           </header>
 
-          {!formFlag && !resultFlag && <Disclaimer lang={lang} />}
+          {!isForm && !isResult && <Disclaimer lang={lang} />}
 
-          {formFlag && !resultFlag && (
+          {isForm && !isResult && (
             <Suspense fallback={<Loader />}>
               <LazyForm />
             </Suspense>
           )}
 
-          {!formFlag && resultFlag && (
+          {!isForm && isResult && (
             <Suspense fallback={<Loader />}>
               <LazyResult />
             </Suspense>
