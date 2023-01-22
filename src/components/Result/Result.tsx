@@ -21,15 +21,13 @@ import {
   selectValueYears,
   selectUserYears
 } from '../../store/Search/selectors/selectors';
-
 import { form, result } from '../../store/Search/ducks';
 
 import inflection from '../../utils/inflection';
 
 import { Button } from '../../ui/Button';
 import { WeeksTable } from '../WeeksTable';
-
-import ResultText from './assets/ResultText';
+import { ResultText } from './ResultText';
 
 import styles from './Result.module.css';
 
