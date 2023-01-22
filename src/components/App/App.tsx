@@ -25,13 +25,13 @@ const LazyForm = React.lazy(() => import('../Form'));
 function App(): JSX.Element {
   const dispatch = useDispatch();
 
-  const lang: string = useSelector(selectChosenLang);
-  const isLoading: boolean = useSelector(selectIsLoading);
-  const isForm: boolean = useSelector(selectIsForm);
-  const isResult: boolean = useSelector(selectIsResult);
+  const lang = useSelector(selectChosenLang);
+  const isLoading = useSelector(selectIsLoading);
+  const isForm = useSelector(selectIsForm);
+  const isResult = useSelector(selectIsResult);
 
   // app height
-  const [appHeight, setAppHeight] = useState<number>(0);
+  const [appHeight, setAppHeight] = useState(0);
   useEffect(() => {
     setAppHeight(window.innerHeight);
   }, []);

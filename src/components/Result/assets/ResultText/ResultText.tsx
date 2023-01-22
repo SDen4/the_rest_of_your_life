@@ -33,12 +33,12 @@ import {
 import styles from './ResultText.module.css';
 
 const ResultText: React.FC = () => {
-  const country: string = useSelector(selectSearchItem);
-  const sex: string = useSelector(selectChosenSex);
-  const lang: string = useSelector(selectChosenLang);
-  const valueYears: number = useSelector(selectValueYears);
-  const statYears: number = useSelector(selectStatYear);
-  const userYears: number = useSelector(selectUserYears);
+  const country = useSelector(selectSearchItem);
+  const sex = useSelector(selectChosenSex);
+  const lang = useSelector(selectChosenLang);
+  const valueYears = useSelector(selectValueYears);
+  const statYears = useSelector(selectStatYear);
+  const userYears = useSelector(selectUserYears);
 
   return (
     <h2>

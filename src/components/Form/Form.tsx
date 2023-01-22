@@ -35,11 +35,10 @@ import styles from './Form.module.css';
 const Form: React.FC = () => {
   const dispatch = useDispatch();
 
-  const sex: string = useSelector(selectChosenSex);
-  const lang: string = useSelector(selectChosenLang);
-  const countriesList: string[] = useSelector(selectCountriesList);
-  const birthDate: Date = useSelector(selectBirthDate);
-
+  const sex = useSelector(selectChosenSex);
+  const lang = useSelector(selectChosenLang);
+  const countriesList = useSelector(selectCountriesList);
+  const birthDate = useSelector(selectBirthDate);
   const country = useSelector(selectCountry);
 
   const choseNewCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {

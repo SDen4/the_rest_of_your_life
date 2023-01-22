@@ -39,10 +39,10 @@ type StateType = StateItemType[];
 const Result: React.FC = () => {
   const dispatch = useDispatch();
 
-  const sex: string = useSelector(selectChosenSex);
-  const lang: string = useSelector(selectChosenLang);
-  const valueYears: number = useSelector(selectValueYears);
-  const userYears: number = useSelector(selectUserYears);
+  const sex = useSelector(selectChosenSex);
+  const lang = useSelector(selectChosenLang);
+  const valueYears = useSelector(selectValueYears);
+  const userYears = useSelector(selectUserYears);
 
   const height = useMemo(
     () =>
