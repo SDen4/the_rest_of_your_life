@@ -1,9 +1,5 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { appLang } from '../../constants/app';
-
-import { choseLang } from '../../store/Search/ducks';
+import { useSelector } from 'react-redux';
 
 import {
   selectIsLoading,
@@ -13,8 +9,7 @@ import {
 } from '../../store/Search/selectors/selectors';
 
 import Disclaimer from '../Disclaimer';
-
-import Select from '../../ui/Select';
+import { Header } from '../Header';
 import Loader from '../../ui/Loader';
 
 import styles from './App.module.css';
@@ -23,8 +18,6 @@ const LazyResult = React.lazy(() => import('../Result'));
 const LazyForm = React.lazy(() => import('../Form'));
 
 function App(): JSX.Element {
-  const dispatch = useDispatch();
-
   const lang = useSelector(selectChosenLang);
   const isLoading = useSelector(selectIsLoading);
   const isForm = useSelector(selectIsForm);
@@ -35,18 +28,6 @@ function App(): JSX.Element {
   useEffect(() => {
     setAppHeight(window.innerHeight);
   }, []);
-
-  const changeLang = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    if (event.target.value) {
-      dispatch(
-        choseLang(
-          event.target.value === 'Eng'
-            ? Object.keys(appLang)[1]
-            : Object.keys(appLang)[0]
-        )
-      );
-    }
-  };
 
   useEffect(() => {
     window.addEventListener('beforeunload', (event) => {
@@ -61,17 +42,7 @@ function App(): JSX.Element {
         <Loader />
       ) : (
         <main className={styles.appWrapper} style={{ minHeight: appHeight }}>
-          <header className={styles.header}>
-            <Select
-              onChange={changeLang}
-              list={Object.values(appLang)}
-              currentValue={
-                lang === 'eng'
-                  ? Object.values(appLang)[1]
-                  : Object.values(appLang)[0]
-              }
-            />
-          </header>
+          <Header />
 
           {!isForm && !isResult && <Disclaimer lang={lang} />}
 
