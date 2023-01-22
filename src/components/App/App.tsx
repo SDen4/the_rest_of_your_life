@@ -10,7 +10,7 @@ import {
 
 import { Disclaimer } from '../Disclaimer';
 import { Header } from '../Header';
-import Loader from '../../ui/Loader';
+import { Loader } from '../../ui/Loader';
 
 import styles from './App.module.css';
 
