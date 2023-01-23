@@ -75,10 +75,7 @@ function* getSearchItem() {
 
   // range of relevant data by years
   const relevantRange = data.fact.filter(
-    (el) =>
-      el.dims.COUNTRY === country &&
-      el.dims.SEX === currentSex &&
-      el.dims.GHO === 'Life expectancy at birth (years)'
+    (el) => el.dims.COUNTRY === country && el.dims.SEX === currentSex
   );
 
   // find the data for the latest year of the range
