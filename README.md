@@ -12,9 +12,8 @@
 
 - typescript
 - react
-- redux
-- redux-saga
 - reduxjs/toolkit
+- redux-saga
 - CSS
 - axios
 - date-fns

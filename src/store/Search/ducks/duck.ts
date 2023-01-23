@@ -1,5 +1,4 @@
-import { combineReducers } from 'redux';
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createAction, createReducer, combineReducers } from '@reduxjs/toolkit';
 
 import { formSexList } from '../../../constants/form';
 import { appLang } from '../../../constants/app';
@@ -17,7 +16,6 @@ const main = 'main';
 // Actions ==========================
 export const searchRequestSaga = createAction(`${main}/SEARCH_REQUEST`);
 export const birthDateSaga = createAction<Date>(`${main}/BIRTH_DATE`);
-
 export const searchAdd = createAction<string>(`${main}/SEARCH_ADD`);
 export const choseCountry = createAction<string>(`${main}/CHOSE_COUNTRY`);
 export const choseSex = createAction<string>(`${main}/CHOSE_SEX`);
@@ -26,7 +24,6 @@ export const saveResult = createAction<saveResultType>(`${main}/SAVE_RESULT`);
 export const saveBirthDate = createAction<saveBirthDateType>(
   `${main}/SAVE_BIRTH`
 );
-
 export const loading = createAction<boolean>(`${main}/IS_LOADING`);
 export const form = createAction<boolean>(`${main}/IS_FORM`);
 export const result = createAction<boolean>(`${main}/IS_RESULT`);

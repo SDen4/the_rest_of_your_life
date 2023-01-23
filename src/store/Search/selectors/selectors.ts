@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { AppStateType } from '../../../store/RootReducer';
+import { AppStateType } from '../../rootReducer';
 
 export const selectSearchItem = createSelector(
   (store: AppStateType) => store.main.searchItem,
