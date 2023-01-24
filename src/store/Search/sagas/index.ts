@@ -9,9 +9,10 @@ import {
   searchRequestSaga
 } from '../ducks';
 
+import { httpRequest } from '../../../api/httpRequest';
+
 import data from '../../../data/data.json';
 
-import { API } from '../../../utils/api';
 import currentSexForSearch from '../../../utils/currentSexForSearch';
 
 import {
@@ -25,26 +26,6 @@ import { loading, birthDateSaga } from '../ducks';
 
 import { getBirthDateSagaType, translatedItemType } from '../types/typesSearch';
 
-async function getData(countryName: string) {
-  const params = new URLSearchParams();
-  params.append('source_language', 'en');
-  params.append('target_language', 'ru');
-  params.append('text', `In ${countryName}`);
-
-  const config = {
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded',
-      'x-rapidapi-host': 'text-translator2.p.rapidapi.com',
-      'x-rapidapi-key': '98974f94fdmshf0e666910f99f56p166f4ejsn57d787efb8c9'
-    }
-  };
-
-  const response = await API.post('translate', params, config).then(
-    (res) => res.data
-  );
-  return response;
-}
-
 function* getSearchItem() {
   const country: string = yield select(selectCountry);
   const sex: string = yield select(selectChosenSex);
@@ -55,7 +36,7 @@ function* getSearchItem() {
   if (lang === 'rus') {
     yield put({ type: loading.toString(), payload: true });
 
-    const translatedItem: translatedItemType = yield getData(country);
+    const translatedItem: translatedItemType = yield httpRequest(country);
 
     if (
       translatedItem.status === 'success' &&
@@ -100,11 +81,7 @@ function* getBirthDate(action: getBirthDateSagaType) {
   const start: Date = yield birthDate;
 
   const userYears: number = yield (end.getTime() - start.getTime()) /
-    1000 /
-    60 /
-    60 /
-    24 /
-    365;
+    31536000000;
 
   yield put({
     type: saveBirthDate.toString(),
