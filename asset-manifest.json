@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/the_rest_of_your_life/static/css/main.7584b585.css",
-    "main.js": "/the_rest_of_your_life/static/js/main.ef30a4e3.js",
-    "static/css/795.0b93437e.chunk.css": "/the_rest_of_your_life/static/css/795.0b93437e.chunk.css",
-    "static/js/795.9b0cc40e.chunk.js": "/the_rest_of_your_life/static/js/795.9b0cc40e.chunk.js",
-    "static/css/172.c0b138b8.chunk.css": "/the_rest_of_your_life/static/css/172.c0b138b8.chunk.css",
-    "static/js/172.1ffe6435.chunk.js": "/the_rest_of_your_life/static/js/172.1ffe6435.chunk.js",
+    "main.css": "/the_rest_of_your_life/static/css/main.1ecba3e3.css",
+    "main.js": "/the_rest_of_your_life/static/js/main.33c4867f.js",
+    "static/css/472.71525452.chunk.css": "/the_rest_of_your_life/static/css/472.71525452.chunk.css",
+    "static/js/472.d2345a24.chunk.js": "/the_rest_of_your_life/static/js/472.d2345a24.chunk.js",
+    "static/css/412.4b83c72e.chunk.css": "/the_rest_of_your_life/static/css/412.4b83c72e.chunk.css",
+    "static/js/412.0c9526eb.chunk.js": "/the_rest_of_your_life/static/js/412.0c9526eb.chunk.js",
     "static/js/337.8292fa42.chunk.js": "/the_rest_of_your_life/static/js/337.8292fa42.chunk.js",
     "index.html": "/the_rest_of_your_life/index.html",
-    "main.7584b585.css.map": "/the_rest_of_your_life/static/css/main.7584b585.css.map",
-    "main.ef30a4e3.js.map": "/the_rest_of_your_life/static/js/main.ef30a4e3.js.map",
-    "795.0b93437e.chunk.css.map": "/the_rest_of_your_life/static/css/795.0b93437e.chunk.css.map",
-    "795.9b0cc40e.chunk.js.map": "/the_rest_of_your_life/static/js/795.9b0cc40e.chunk.js.map",
-    "172.c0b138b8.chunk.css.map": "/the_rest_of_your_life/static/css/172.c0b138b8.chunk.css.map",
-    "172.1ffe6435.chunk.js.map": "/the_rest_of_your_life/static/js/172.1ffe6435.chunk.js.map",
+    "main.1ecba3e3.css.map": "/the_rest_of_your_life/static/css/main.1ecba3e3.css.map",
+    "main.33c4867f.js.map": "/the_rest_of_your_life/static/js/main.33c4867f.js.map",
+    "472.71525452.chunk.css.map": "/the_rest_of_your_life/static/css/472.71525452.chunk.css.map",
+    "472.d2345a24.chunk.js.map": "/the_rest_of_your_life/static/js/472.d2345a24.chunk.js.map",
+    "412.4b83c72e.chunk.css.map": "/the_rest_of_your_life/static/css/412.4b83c72e.chunk.css.map",
+    "412.0c9526eb.chunk.js.map": "/the_rest_of_your_life/static/js/412.0c9526eb.chunk.js.map",
     "337.8292fa42.chunk.js.map": "/the_rest_of_your_life/static/js/337.8292fa42.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7584b585.css",
-    "static/js/main.ef30a4e3.js"
+    "static/css/main.1ecba3e3.css",
+    "static/js/main.33c4867f.js"
   ]
 }
