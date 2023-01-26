@@ -1,16 +1,17 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import {
-  selectIsLoading,
-  selectChosenLang,
-  selectIsForm,
-  selectIsResult
-} from '../../store/Search/selectors/selectors';
+import { Loader } from '../ui/Loader';
 
 import { Disclaimer } from '../shared/Disclaimer';
 import { Header } from '../shared/Header';
-import { Loader } from '../ui/Loader';
+
+import {
+  selectChosenLang,
+  selectIsForm,
+  selectIsLoading,
+  selectIsResult
+} from '../../store/Search/selectors/selectors';
 
 import styles from './styles.module.css';
 

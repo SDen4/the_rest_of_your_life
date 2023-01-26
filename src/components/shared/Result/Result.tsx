@@ -2,32 +2,32 @@ import React, { memo, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 
+import { Button } from '../../ui/Button';
+import { WeeksTable } from '../WeeksTable';
+import { ResultText } from './ResultText';
+
+import inflection from '../../../utils/inflection';
+
+import {
+  selectChosenLang,
+  selectChosenSex,
+  selectUserYears,
+  selectValueYears
+} from '../../../store/Search/selectors/selectors';
+import { form, result } from '../../../store/Search/ducks';
+
+import { formSexList } from '../../../constants/form';
 import {
   resultButton,
   resultTextFinal,
   resultTextFinalLucky,
   resultTextOr,
-  resultTextWeek,
   resultTextOr2,
+  resultTextWeek,
   resultYearsTextinTheTable,
   resultYearsTextInTheTableLuckyMan,
   resultYearsTextInTheTableLuckyWooman
 } from '../../../constants/result';
-import { formSexList } from '../../../constants/form';
-
-import {
-  selectChosenSex,
-  selectChosenLang,
-  selectValueYears,
-  selectUserYears
-} from '../../../store/Search/selectors/selectors';
-import { form, result } from '../../../store/Search/ducks';
-
-import inflection from '../../../utils/inflection';
-
-import { Button } from '../../ui/Button';
-import { WeeksTable } from '../WeeksTable';
-import { ResultText } from './ResultText';
 
 import styles from './styles.module.css';
 

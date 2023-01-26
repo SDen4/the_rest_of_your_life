@@ -1,5 +1,14 @@
 import { all, put, select, takeEvery } from 'redux-saga/effects';
 
+import { httpRequest } from '../../../api/httpRequest';
+import currentSexForSearch from '../../../utils/currentSexForSearch';
+
+import {
+  selectChosenLang,
+  selectChosenSex,
+  selectCountry,
+  selectCurrentDate
+} from '../../Search/selectors/selectors';
 import {
   form,
   result,
@@ -8,23 +17,11 @@ import {
   searchAdd,
   searchRequestSaga
 } from '../ducks';
-
-import { httpRequest } from '../../../api/httpRequest';
-
-import data from '../../../data/data.json';
-
-import currentSexForSearch from '../../../utils/currentSexForSearch';
-
-import {
-  selectChosenSex,
-  selectChosenLang,
-  selectCurrentDate,
-  selectCountry
-} from '../../Search/selectors/selectors';
-
-import { loading, birthDateSaga } from '../ducks';
+import { birthDateSaga, loading } from '../ducks';
 
 import { translatedItemType } from '../../../model/types';
+
+import data from '../../../data/data.json';
 
 function* getSearchItem() {
   const country: string = yield select(selectCountry);

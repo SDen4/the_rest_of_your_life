@@ -1,7 +1,24 @@
 import React, { memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { format } from 'date-fns';
 import clsx from 'clsx';
+import { format } from 'date-fns';
+
+import { Button } from '../../ui/Button';
+import Select from '../../ui/Select';
+
+import {
+  selectBirthDate,
+  selectChosenLang,
+  selectChosenSex,
+  selectCountriesList,
+  selectCountry
+} from '../../../store/Search/selectors/selectors';
+import {
+  birthDateSaga,
+  choseCountry,
+  choseSex,
+  searchRequestSaga
+} from '../../../store/Search/ducks';
 
 import {
   formButton,
@@ -11,24 +28,6 @@ import {
   formSexList,
   formTitle
 } from '../../../constants/form';
-
-import { Button } from '../../ui/Button';
-import Select from '../../ui/Select';
-
-import {
-  selectChosenSex,
-  selectChosenLang,
-  selectCountriesList,
-  selectBirthDate,
-  selectCountry
-} from '../../../store/Search/selectors/selectors';
-
-import {
-  choseSex,
-  birthDateSaga,
-  choseCountry,
-  searchRequestSaga
-} from '../../../store/Search/ducks';
 
 import styles from './styles.module.css';
 

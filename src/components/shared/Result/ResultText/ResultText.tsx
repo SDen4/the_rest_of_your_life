@@ -1,8 +1,18 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { formSexList } from '../../../../constants/form';
+import inflection from '../../../../utils/inflection';
 
+import {
+  selectChosenLang,
+  selectChosenSex,
+  selectSearchItem,
+  selectStatYear,
+  selectUserYears,
+  selectValueYears
+} from '../../../../store/Search/selectors/selectors';
+
+import { formSexList } from '../../../../constants/form';
 import {
   resultText1,
   resultTextAfterPers,
@@ -18,17 +28,6 @@ import {
   resultTextWoman,
   resultTextYearRus
 } from '../../../../constants/result';
-
-import inflection from '../../../../utils/inflection';
-
-import {
-  selectSearchItem,
-  selectChosenSex,
-  selectChosenLang,
-  selectValueYears,
-  selectStatYear,
-  selectUserYears
-} from '../../../../store/Search/selectors/selectors';
 
 import styles from './styles.module.css';
 

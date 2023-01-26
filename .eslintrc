@@ -3,7 +3,8 @@
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "simple-import-sort"
   ],
   "extends": [
     "eslint:recommended",
@@ -15,5 +16,39 @@
     "prefer-const": "warn",
     "no-console": 1,
     "prettier/prettier": 1
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts*"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "warn", {
+            "groups": [
+              [
+                "^react",
+                "^redux",
+                "^@?\\w",
+                "^(@|@company|@ui|config|vendored-lib)(/.*|$)"
+              ],
+              [
+                "^\\$+",
+                "^\\.\\.(?!/?$)",
+                "^\\.\\./?$",
+                "^\\./(?=.*/)(?!/?$)",
+                "^\\.(?!/?$)",
+                "^\\./?$"
+              ],
+              ["ui", "components", "shared"],
+              ["api", "utils"],
+              ["selectors", "store", "ducks"],
+              ["model"],
+              ["constants"],
+              ["data"],
+              ["^.+\\.s?css$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

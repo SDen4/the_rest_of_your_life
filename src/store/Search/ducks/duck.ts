@@ -1,12 +1,12 @@
-import { createAction, createReducer, combineReducers } from '@reduxjs/toolkit';
-
-import { formSexList } from '../../../constants/form';
-import { appLang } from '../../../constants/app';
+import { combineReducers, createAction, createReducer } from '@reduxjs/toolkit';
 
 import { saveBirthDateType, saveResultType } from '../../../model/types';
+import { constType } from '../../../model/types';
+
+import { appLang } from '../../../constants/app';
+import { formSexList } from '../../../constants/form';
 
 import data from '../../../data/data.json';
-import { constType } from '../../../model/types';
 
 const dataCountriesList = Array.from(
   new Set(data.fact.map((el) => el.dims.COUNTRY))

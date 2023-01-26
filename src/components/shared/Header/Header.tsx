@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Select from '../../ui/Select';
 
-import { choseLang } from '../../../store/Search/ducks';
 import { selectChosenLang } from '../../../store/Search/selectors/selectors';
+import { choseLang } from '../../../store/Search/ducks';
+
+import { constType } from '../../../model/types';
 
 import { appLang } from '../../../constants/app';
 
 import styles from './styles.module.css';
-import { constType } from '../../../model/types';
 
 export const Header = (): JSX.Element => {
   const dispatch = useDispatch();
