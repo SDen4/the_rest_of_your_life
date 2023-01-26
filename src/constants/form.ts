@@ -1,5 +1,4 @@
-export type constType = { [key: string]: string };
-export type constArrType = { [key: string]: string[] };
+import { constArrType, constType } from '../model/types';
 
 export const formNames: constType = {
   rus: 'Страна',

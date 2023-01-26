@@ -3,9 +3,10 @@ import { createAction, createReducer, combineReducers } from '@reduxjs/toolkit';
 import { formSexList } from '../../../constants/form';
 import { appLang } from '../../../constants/app';
 
-import { saveBirthDateType, saveResultType } from '../types/typesSearch';
+import { saveBirthDateType, saveResultType } from '../../../model/types';
 
 import data from '../../../data/data.json';
+import { constType } from '../../../model/types';
 
 const dataCountriesList = Array.from(
   new Set(data.fact.map((el) => el.dims.COUNTRY))
@@ -19,7 +20,7 @@ export const birthDateSaga = createAction<Date>(`${main}/BIRTH_DATE`);
 export const searchAdd = createAction<string>(`${main}/SEARCH_ADD`);
 export const choseCountry = createAction<string>(`${main}/CHOSE_COUNTRY`);
 export const choseSex = createAction<string>(`${main}/CHOSE_SEX`);
-export const choseLang = createAction<string>(`${main}/CHOSE_LANG`);
+export const choseLang = createAction<keyof constType>(`${main}/CHOSE_LANG`);
 export const saveResult = createAction<saveResultType>(`${main}/SAVE_RESULT`);
 export const saveBirthDate = createAction<saveBirthDateType>(
   `${main}/SAVE_BIRTH`
@@ -41,7 +42,7 @@ const chosenSex = createReducer(formSexList.rus[0], {
   [choseSex.toString()]: (_state, action) => action.payload
 });
 
-const chosenLang = createReducer(Object.keys(appLang)[0], {
+const chosenLang = createReducer(Object.keys(appLang)[0] as keyof constType, {
   [choseLang.toString()]: (_state, action) => action.payload
 });
 

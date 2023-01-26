@@ -1,3 +1,3 @@
-export type constType = { [key: string]: string };
+import { constType } from '../model/types';
 
 export const appLang: constType = { rus: 'Рус', eng: 'Eng' };

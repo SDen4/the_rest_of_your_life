@@ -7,10 +7,12 @@ import { DisclaimerButtonText } from '../../constants/disclaimer';
 
 import { form } from '../../store/Search/ducks';
 
+import { constType } from '../../model/types';
+
 import styles from './styles.module.css';
 
 interface IProps {
-  lang: string;
+  lang: keyof constType;
 }
 
 export const Disclaimer: FC<IProps> = ({ lang }) => {

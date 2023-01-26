@@ -24,7 +24,7 @@ import {
 
 import { loading, birthDateSaga } from '../ducks';
 
-import { getBirthDateSagaType, translatedItemType } from '../types/typesSearch';
+import { translatedItemType } from '../../../model/types';
 
 function* getSearchItem() {
   const country: string = yield select(selectCountry);
@@ -74,7 +74,12 @@ function* getSearchItem() {
   ]);
 }
 
-function* getBirthDate(action: getBirthDateSagaType) {
+interface IProps {
+  type: 'main/BIRTH_DATE';
+  payload: Date;
+}
+
+function* getBirthDate(action: IProps) {
   const birthDate: Date = yield action.payload;
 
   const end: Date = yield select(selectCurrentDate);

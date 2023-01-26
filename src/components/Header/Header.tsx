@@ -9,6 +9,7 @@ import { selectChosenLang } from '../../store/Search/selectors/selectors';
 import { appLang } from '../../constants/app';
 
 import styles from './styles.module.css';
+import { constType } from '../../model/types';
 
 export const Header = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -17,13 +18,12 @@ export const Header = (): JSX.Element => {
 
   const changeLang = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value) {
-      dispatch(
-        choseLang(
-          event.target.value === 'Eng'
-            ? Object.keys(appLang)[1]
-            : Object.keys(appLang)[0]
-        )
-      );
+      const value =
+        event.target.value === 'Eng'
+          ? Object.keys(appLang)[1]
+          : Object.keys(appLang)[0];
+
+      dispatch(choseLang(value as keyof constType));
     }
   };
 
