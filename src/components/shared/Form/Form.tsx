@@ -10,7 +10,7 @@ import {
   formSex,
   formSexList,
   formTitle
-} from '../../constants/form';
+} from '../../../constants/form';
 
 import { Button } from '../../ui/Button';
 import Select from '../../ui/Select';
@@ -21,14 +21,14 @@ import {
   selectCountriesList,
   selectBirthDate,
   selectCountry
-} from '../../store/Search/selectors/selectors';
+} from '../../../store/Search/selectors/selectors';
 
 import {
   choseSex,
   birthDateSaga,
   choseCountry,
   searchRequestSaga
-} from '../../store/Search/ducks';
+} from '../../../store/Search/ducks';
 
 import styles from './styles.module.css';
 

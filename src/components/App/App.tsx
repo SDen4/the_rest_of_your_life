@@ -8,14 +8,14 @@ import {
   selectIsResult
 } from '../../store/Search/selectors/selectors';
 
-import { Disclaimer } from '../Disclaimer';
-import { Header } from '../Header';
-import { Loader } from '../../ui/Loader';
+import { Disclaimer } from '../shared/Disclaimer';
+import { Header } from '../shared/Header';
+import { Loader } from '../ui/Loader';
 
 import styles from './styles.module.css';
 
-const LazyResult = React.lazy(() => import('../Result'));
-const LazyForm = React.lazy(() => import('../Form'));
+const LazyResult = React.lazy(() => import('../shared/Result'));
+const LazyForm = React.lazy(() => import('../shared/Form'));
 
 function App(): JSX.Element {
   const lang = useSelector(selectChosenLang);

@@ -12,18 +12,18 @@ import {
   resultYearsTextinTheTable,
   resultYearsTextInTheTableLuckyMan,
   resultYearsTextInTheTableLuckyWooman
-} from '../../constants/result';
-import { formSexList } from '../../constants/form';
+} from '../../../constants/result';
+import { formSexList } from '../../../constants/form';
 
 import {
   selectChosenSex,
   selectChosenLang,
   selectValueYears,
   selectUserYears
-} from '../../store/Search/selectors/selectors';
-import { form, result } from '../../store/Search/ducks';
+} from '../../../store/Search/selectors/selectors';
+import { form, result } from '../../../store/Search/ducks';
 
-import inflection from '../../utils/inflection';
+import inflection from '../../../utils/inflection';
 
 import { Button } from '../../ui/Button';
 import { WeeksTable } from '../WeeksTable';
