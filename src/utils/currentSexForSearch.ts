@@ -1,3 +1,9 @@
+/**
+ * Function returns correct sex (Male/Female/Both sexes) according income argument
+ *
+ * @param {string} currentSex
+ * @return {*}  {string}
+ */
 const currentSexForSearch = (currentSex: string): string => {
   if (
     currentSex.toLocaleLowerCase() === 'male' ||
