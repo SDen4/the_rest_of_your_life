@@ -18,7 +18,6 @@
 - axios
 - date-fns
 - clsx
-
 - eslint
 - prettier
 - husky
