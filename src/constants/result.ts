@@ -1,4 +1,4 @@
-import { constType } from '../model/types';
+import type { constType } from '../model/types';
 
 export const resultButton: constType = {
   rus: 'Назад',

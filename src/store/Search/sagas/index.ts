@@ -19,7 +19,7 @@ import {
 } from '../ducks';
 import { birthDateSaga, loading } from '../ducks';
 
-import { translatedItemType } from '../../../model/types';
+import type { translatedItemType } from '../../../model/types';
 
 import data from '../../../data/data.json';
 

@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import React, { memo } from 'react';
 
 import styles from './styles.module.css';
@@ -9,7 +10,7 @@ interface IProps {
   title?: string;
 }
 
-const Select: React.FC<IProps> = ({ title, onChange, list, currentValue }) => {
+const Select: FC<IProps> = ({ title, onChange, list, currentValue }) => {
   return (
     <>
       {title && <label className={styles.label}>{title}</label>}

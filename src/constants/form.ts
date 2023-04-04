@@ -1,4 +1,4 @@
-import { constArrType, constType } from '../model/types';
+import type { constArrType, constType } from '../model/types';
 
 export const formNames: constType = {
   rus: 'Страна',

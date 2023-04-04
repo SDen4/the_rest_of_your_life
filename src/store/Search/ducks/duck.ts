@@ -1,7 +1,7 @@
 import { combineReducers, createAction, createReducer } from '@reduxjs/toolkit';
 
-import { saveBirthDateType, saveResultType } from '../../../model/types';
-import { constType } from '../../../model/types';
+import type { saveBirthDateType, saveResultType } from '../../../model/types';
+import type { constType } from '../../../model/types';
 
 import { appLang } from '../../../constants/app';
 import { formSexList } from '../../../constants/form';

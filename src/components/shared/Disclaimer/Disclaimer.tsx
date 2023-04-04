@@ -1,11 +1,12 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Button } from '../../ui/Button';
 
 import { form } from '../../../store/Search/ducks';
 
-import { constType } from '../../../model/types';
+import type { constType } from '../../../model/types';
 
 import { DisclaimerText } from '../../../constants/disclaimer';
 import { DisclaimerButtonText } from '../../../constants/disclaimer';

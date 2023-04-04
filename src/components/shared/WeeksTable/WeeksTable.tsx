@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
 
@@ -8,7 +9,7 @@ interface IProps {
   userYears: number;
 }
 
-export const WeeksTable: React.FC<IProps> = ({ valueYears, userYears }) => {
+export const WeeksTable: FC<IProps> = ({ valueYears, userYears }) => {
   const roundUserYears = useMemo(() => Math.ceil(userYears), []);
 
   const tableCols = [];

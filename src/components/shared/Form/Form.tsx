@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import React, { memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
@@ -31,7 +32,7 @@ import {
 
 import styles from './styles.module.css';
 
-const Form: React.FC = () => {
+const Form: FC = () => {
   const dispatch = useDispatch();
 
   const sex = useSelector(selectChosenSex);

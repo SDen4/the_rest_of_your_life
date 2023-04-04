@@ -6,7 +6,7 @@ import Select from '../../ui/Select';
 import { selectChosenLang } from '../../../store/Search/selectors/selectors';
 import { choseLang } from '../../../store/Search/ducks';
 
-import { constType } from '../../../model/types';
+import type { constType } from '../../../model/types';
 
 import { appLang } from '../../../constants/app';
 

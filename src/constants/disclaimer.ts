@@ -1,4 +1,4 @@
-import { constType } from '../model/types';
+import type { constType } from '../model/types';
 
 export const DisclaimerText: constType = {
   rus: 'Посмотри, сколько тебе еще осталось',
